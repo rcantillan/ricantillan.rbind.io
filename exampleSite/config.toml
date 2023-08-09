@@ -1,5 +1,5 @@
-baseURL = 'https://rcantillan.rbind.io/'
-
+baseURL = "https://rcantillan.rbind.io/"
+ 
 languageCode = 'en-us'
 title = 'Roberto Cantillan'
 
