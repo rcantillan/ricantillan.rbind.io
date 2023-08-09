@@ -24,7 +24,7 @@ googleAnalytics = "G-CSC1TRYSDL"
 # HUGO-APERO SETTINGS ---------------------------------------------------------
 [params]
   orgName = "Roberto Cantillan"
-  logo = "ricantillan.rbind.io/static/img/logo2.png"
+  logo = "/img/logo2.png"
 
   mainSections = ["blog", "projects", "pubs"]
   navallcaps = true
