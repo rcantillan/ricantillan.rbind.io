@@ -32,7 +32,7 @@ pacman::p_load(ggplot2,ggthemes,tidyverse,sjlabelled,sjPlot,vcd,texreg,ordinal,
                survey,egor,haven,car,dplyr,stargazer,janitor,gridExtra,ggeffects,
                haven,summarytools,skimr,weights,ggcorrplot,ggridges,panelr,
                GLMMadaptive,survival,R.utils,questionr,car,corrplot,hrbrthemes,
-               viridis,extrafont,JWileymisc)
+               viridis,extrafont,JWileymisc,xtable)
 ```
 
 
@@ -194,22 +194,22 @@ obs[obs=="-888"] <- NA
 
 Observamos la frecuencia de las categorias de los atributos de alteris. 
 ```{r}
-freq(obs$alter_educ)
-freq(obs$alter_relig)
-freq(obs$alter_ideol)
-freq(obs$alter_edad)
-freq(obs$alter_sexo)
+xtable(freq(obs$alter_educ))
+xtable(freq(obs$alter_relig))
+xtable(freq(obs$alter_ideol))
+xtable(freq(obs$alter_edad))
+xtable(freq(obs$alter_sexo))
 ```
 
 ### Descriptivos (ego)
 
 Observamos la frecuencia de las categorias de los atributos sociodemográficos de ego. 
 ```{r}
-freq(obs$ego_educ)
-freq(obs$ego_relig)
-freq(obs$ego_ideol)
-freq(obs$ego_edad)
-freq(obs$ego_sexo)
+xtable(freq(obs$ego_educ))
+xtable(freq(obs$ego_relig))
+xtable(freq(obs$ego_ideol))
+xtable(freq(obs$ego_edad))
+xtable(freq(obs$ego_sexo))
 ```
 
 
@@ -231,7 +231,10 @@ obs<-obs%>%
 table_cont<-sjPlot::tab_xtab(var.row = obs$ego_educ, 
                              var.col = obs$alter_educ, 
                              title = "Social mix by educational level ELSOC 2017", 
-                             show.row.prc = TRUE)
+                             show.row.prc = TRUE,
+                             show.summary = TRUE,
+                             show.col.prc = TRUE,
+                             use.viewer = FALSE)
 table_cont
 ```
 
@@ -284,8 +287,8 @@ obs$relig_dist<-ifelse(obs$alter_relig==obs$ego_relig, 0, 1)
 ### Descriptivos 
 
 ```{r}
-egltable(c("sexo_dist", "edad_dist", "educ_dist", "ideol_dist", "relig_dist"),
-         data = obs, strict=T) 
+xtable(egltable(c("sexo_dist", "edad_dist", "educ_dist", "ideol_dist", "relig_dist"),
+         data = obs, strict=T))
 ```
 
 Esta tabla es la misma de Smith et al. (2014). Describe la media de la distancia sociodemogrpafica por parámetro. Como alternativa, el valor TRUE del argumento `strict` de la función `egltable`, muestra los porcentajes por categoría de la variable dummy.

@@ -30,7 +30,7 @@ pacman::p_load(ggplot2,ggthemes,tidyverse,sjlabelled,sjPlot,vcd,texreg,ordinal,
                survey,egor,haven,car,dplyr,stargazer,janitor,gridExtra,ggeffects,
                haven,summarytools,skimr,weights,ggcorrplot,ggridges,panelr,
                GLMMadaptive,survival,R.utils,questionr,car,corrplot,hrbrthemes,
-               viridis,extrafont,JWileymisc)
+               viridis,extrafont,JWileymisc,xtable)
 ```
 
 ### 2017
@@ -200,121 +200,221 @@ obs[obs=="-888"] <- NA
 Observamos la frecuencia de las categorias de los atributos de alteris.
 
 ``` r
-freq(obs$alter_educ)
+xtable(freq(obs$alter_educ))
 ```
 
-          n    % val%
-    1  1362 11.0 17.8
-    2  3543 28.7 46.2
-    3  1042  8.4 13.6
-    4  1719 13.9 22.4
-    NA 4699 38.0   NA
+    % latex table generated in R 4.1.2 by xtable 1.8-4 package
+    % Wed Aug  9 19:04:30 2023
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{rrrr}
+      \hline
+     & n & \% & val\% \\ 
+      \hline
+    1 & 1362.00 & 11.00 & 17.80 \\ 
+      2 & 3543.00 & 28.70 & 46.20 \\ 
+      3 & 1042.00 & 8.40 & 13.60 \\ 
+      4 & 1719.00 & 13.90 & 22.40 \\ 
+      NA & 4699.00 & 38.00 &  \\ 
+       \hline
+    \end{tabular}
+    \end{table}
 
 ``` r
-freq(obs$alter_relig)
+xtable(freq(obs$alter_relig))
 ```
 
-          n    % val%
-    1  4907 39.7 60.8
-    2  1407 11.4 17.4
-    3  1128  9.1 14.0
-    4   251  2.0  3.1
-    5   373  3.0  4.6
-    NA 4299 34.8   NA
+    % latex table generated in R 4.1.2 by xtable 1.8-4 package
+    % Wed Aug  9 19:04:30 2023
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{rrrr}
+      \hline
+     & n & \% & val\% \\ 
+      \hline
+    1 & 4907.00 & 39.70 & 60.80 \\ 
+      2 & 1407.00 & 11.40 & 17.40 \\ 
+      3 & 1128.00 & 9.10 & 14.00 \\ 
+      4 & 251.00 & 2.00 & 3.10 \\ 
+      5 & 373.00 & 3.00 & 4.60 \\ 
+      NA & 4299.00 & 34.80 &  \\ 
+       \hline
+    \end{tabular}
+    \end{table}
 
 ``` r
-freq(obs$alter_ideol)
+xtable(freq(obs$alter_ideol))
 ```
 
-          n    % val%
-    1   786  6.4 11.1
-    2   191  1.5  2.7
-    3   382  3.1  5.4
-    4   303  2.5  4.3
-    5   759  6.1 10.7
-    6  4644 37.6 65.7
-    NA 5300 42.9   NA
+    % latex table generated in R 4.1.2 by xtable 1.8-4 package
+    % Wed Aug  9 19:04:30 2023
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{rrrr}
+      \hline
+     & n & \% & val\% \\ 
+      \hline
+    1 & 786.00 & 6.40 & 11.10 \\ 
+      2 & 191.00 & 1.50 & 2.70 \\ 
+      3 & 382.00 & 3.10 & 5.40 \\ 
+      4 & 303.00 & 2.50 & 4.30 \\ 
+      5 & 759.00 & 6.10 & 10.70 \\ 
+      6 & 4644.00 & 37.60 & 65.70 \\ 
+      NA & 5300.00 & 42.90 &  \\ 
+       \hline
+    \end{tabular}
+    \end{table}
 
 ``` r
-freq(obs$alter_edad)
+xtable(freq(obs$alter_edad))
 ```
 
-          n    % val%
-    1   349  2.8  4.3
-    2  1477 11.9 18.3
-    3  1875 15.2 23.2
-    4  1713 13.9 21.2
-    5  1466 11.9 18.2
-    6  1186  9.6 14.7
-    NA 4299 34.8   NA
+    % latex table generated in R 4.1.2 by xtable 1.8-4 package
+    % Wed Aug  9 19:04:30 2023
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{rrrr}
+      \hline
+     & n & \% & val\% \\ 
+      \hline
+    1 & 349.00 & 2.80 & 4.30 \\ 
+      2 & 1477.00 & 11.90 & 18.30 \\ 
+      3 & 1875.00 & 15.20 & 23.20 \\ 
+      4 & 1713.00 & 13.90 & 21.20 \\ 
+      5 & 1466.00 & 11.90 & 18.20 \\ 
+      6 & 1186.00 & 9.60 & 14.70 \\ 
+      NA & 4299.00 & 34.80 &  \\ 
+       \hline
+    \end{tabular}
+    \end{table}
 
 ``` r
-freq(obs$alter_sexo)
+xtable(freq(obs$alter_sexo))
 ```
 
-          n    % val%
-    1  3388 27.4   42
-    2  4678 37.8   58
-    NA 4299 34.8   NA
+    % latex table generated in R 4.1.2 by xtable 1.8-4 package
+    % Wed Aug  9 19:04:30 2023
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{rrrr}
+      \hline
+     & n & \% & val\% \\ 
+      \hline
+    1 & 3388.00 & 27.40 & 42.00 \\ 
+      2 & 4678.00 & 37.80 & 58.00 \\ 
+      NA & 4299.00 & 34.80 &  \\ 
+       \hline
+    \end{tabular}
+    \end{table}
 
 ### Descriptivos (ego)
 
 Observamos la frecuencia de las categorias de los atributos sociodemográficos de ego.
 
 ``` r
-freq(obs$ego_educ)
+xtable(freq(obs$ego_educ))
 ```
 
-         n    % val%
-    1 2985 24.1 24.1
-    2 5225 42.3 42.3
-    3 2010 16.3 16.3
-    4 2145 17.3 17.3
+    % latex table generated in R 4.1.2 by xtable 1.8-4 package
+    % Wed Aug  9 19:04:30 2023
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{rrrr}
+      \hline
+     & n & \% & val\% \\ 
+      \hline
+    1 & 2985.00 & 24.10 & 24.10 \\ 
+      2 & 5225.00 & 42.30 & 42.30 \\ 
+      3 & 2010.00 & 16.30 & 16.30 \\ 
+      4 & 2145.00 & 17.30 & 17.30 \\ 
+       \hline
+    \end{tabular}
+    \end{table}
 
 ``` r
-freq(obs$ego_relig)
+xtable(freq(obs$ego_relig))
 ```
 
-          n    % val%
-    1  6915 55.9 56.1
-    2  2495 20.2 20.2
-    3  1055  8.5  8.6
-    4   485  3.9  3.9
-    5  1380 11.2 11.2
-    NA   35  0.3   NA
+    % latex table generated in R 4.1.2 by xtable 1.8-4 package
+    % Wed Aug  9 19:04:30 2023
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{rrrr}
+      \hline
+     & n & \% & val\% \\ 
+      \hline
+    1 & 6915.00 & 55.90 & 56.10 \\ 
+      2 & 2495.00 & 20.20 & 20.20 \\ 
+      3 & 1055.00 & 8.50 & 8.60 \\ 
+      4 & 485.00 & 3.90 & 3.90 \\ 
+      5 & 1380.00 & 11.20 & 11.20 \\ 
+      NA & 35.00 & 0.30 &  \\ 
+       \hline
+    \end{tabular}
+    \end{table}
 
 ``` r
-freq(obs$ego_ideol)
+xtable(freq(obs$ego_ideol))
 ```
 
-          n    % val%
-    1   915  7.4  7.5
-    2  1090  8.8  8.9
-    3  2350 19.0 19.2
-    4  1380 11.2 11.3
-    5  1075  8.7  8.8
-    6  5400 43.7 44.2
-    NA  155  1.3   NA
+    % latex table generated in R 4.1.2 by xtable 1.8-4 package
+    % Wed Aug  9 19:04:30 2023
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{rrrr}
+      \hline
+     & n & \% & val\% \\ 
+      \hline
+    1 & 915.00 & 7.40 & 7.50 \\ 
+      2 & 1090.00 & 8.80 & 8.90 \\ 
+      3 & 2350.00 & 19.00 & 19.20 \\ 
+      4 & 1380.00 & 11.20 & 11.30 \\ 
+      5 & 1075.00 & 8.70 & 8.80 \\ 
+      6 & 5400.00 & 43.70 & 44.20 \\ 
+      NA & 155.00 & 1.30 &  \\ 
+       \hline
+    \end{tabular}
+    \end{table}
 
 ``` r
-freq(obs$ego_edad)
+xtable(freq(obs$ego_edad))
 ```
 
-         n    % val%
-    1   10  0.1  0.1
-    2 1865 15.1 15.1
-    3 2530 20.5 20.5
-    4 2720 22.0 22.0
-    5 2870 23.2 23.2
-    6 2370 19.2 19.2
+    % latex table generated in R 4.1.2 by xtable 1.8-4 package
+    % Wed Aug  9 19:04:30 2023
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{rrrr}
+      \hline
+     & n & \% & val\% \\ 
+      \hline
+    1 & 10.00 & 0.10 & 0.10 \\ 
+      2 & 1865.00 & 15.10 & 15.10 \\ 
+      3 & 2530.00 & 20.50 & 20.50 \\ 
+      4 & 2720.00 & 22.00 & 22.00 \\ 
+      5 & 2870.00 & 23.20 & 23.20 \\ 
+      6 & 2370.00 & 19.20 & 19.20 \\ 
+       \hline
+    \end{tabular}
+    \end{table}
 
 ``` r
-freq(obs$ego_sexo)
+xtable(freq(obs$ego_sexo))
 ```
 
-         n    % val%
-    1 4755 38.5 38.5
-    2 7610 61.5 61.5
+    % latex table generated in R 4.1.2 by xtable 1.8-4 package
+    % Wed Aug  9 19:04:30 2023
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{rrrr}
+      \hline
+     & n & \% & val\% \\ 
+      \hline
+    1 & 4755.00 & 38.50 & 38.50 \\ 
+      2 & 7610.00 & 61.50 & 61.50 \\ 
+       \hline
+    \end{tabular}
+    \end{table}
 
 ### Croos tab educ
 
@@ -335,7 +435,10 @@ obs<-obs%>%
 table_cont<-sjPlot::tab_xtab(var.row = obs$ego_educ, 
                              var.col = obs$alter_educ, 
                              title = "Social mix by educational level ELSOC 2017", 
-                             show.row.prc = TRUE)
+                             show.row.prc = TRUE,
+                             show.summary = TRUE,
+                             show.col.prc = TRUE,
+                             use.viewer = FALSE)
 table_cont
 ```
 
@@ -356,47 +459,47 @@ table_cont
  
 <tr> 
 <td style="padding:0.2cm;  text-align:left; vertical-align:middle;">basico</td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">570</span><br><span style="color:#333399;">19.1&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">825</span><br><span style="color:#333399;">27.6&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">89</span><br><span style="color:#333399;">3&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">1501</span><br><span style="color:#333399;">50.3&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center;  "><span style="color:black;">2985</span><br><span style="color:#333399;">100&nbsp;&#37;</span></td> 
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">570</span><br><span style="color:#333399;">19.1&nbsp;&#37;</span><br><span style="color:#339933;">41.9&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">825</span><br><span style="color:#333399;">27.6&nbsp;&#37;</span><br><span style="color:#339933;">23.3&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">89</span><br><span style="color:#333399;">3&nbsp;&#37;</span><br><span style="color:#339933;">8.5&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">1501</span><br><span style="color:#333399;">50.3&nbsp;&#37;</span><br><span style="color:#339933;">23.4&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center;  "><span style="color:black;">2985</span><br><span style="color:#333399;">100&nbsp;&#37;</span><br><span style="color:#339933;">24.1&nbsp;&#37;</span></td> 
 </tr>
  
 <tr> 
 <td style="padding:0.2cm;  text-align:left; vertical-align:middle;">media</td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">622</span><br><span style="color:#333399;">11.9&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">1881</span><br><span style="color:#333399;">36&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">336</span><br><span style="color:#333399;">6.4&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">2386</span><br><span style="color:#333399;">45.7&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center;  "><span style="color:black;">5225</span><br><span style="color:#333399;">100&nbsp;&#37;</span></td> 
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">622</span><br><span style="color:#333399;">11.9&nbsp;&#37;</span><br><span style="color:#339933;">45.7&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">1881</span><br><span style="color:#333399;">36&nbsp;&#37;</span><br><span style="color:#339933;">53.1&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">336</span><br><span style="color:#333399;">6.4&nbsp;&#37;</span><br><span style="color:#339933;">32.2&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">2386</span><br><span style="color:#333399;">45.7&nbsp;&#37;</span><br><span style="color:#339933;">37.2&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center;  "><span style="color:black;">5225</span><br><span style="color:#333399;">100&nbsp;&#37;</span><br><span style="color:#339933;">42.3&nbsp;&#37;</span></td> 
 </tr>
  
 <tr> 
 <td style="padding:0.2cm;  text-align:left; vertical-align:middle;">tecnica</td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">116</span><br><span style="color:#333399;">5.8&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">481</span><br><span style="color:#333399;">23.9&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">389</span><br><span style="color:#333399;">19.4&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">1024</span><br><span style="color:#333399;">50.9&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center;  "><span style="color:black;">2010</span><br><span style="color:#333399;">100&nbsp;&#37;</span></td> 
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">116</span><br><span style="color:#333399;">5.8&nbsp;&#37;</span><br><span style="color:#339933;">8.5&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">481</span><br><span style="color:#333399;">23.9&nbsp;&#37;</span><br><span style="color:#339933;">13.6&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">389</span><br><span style="color:#333399;">19.4&nbsp;&#37;</span><br><span style="color:#339933;">37.3&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">1024</span><br><span style="color:#333399;">50.9&nbsp;&#37;</span><br><span style="color:#339933;">16&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center;  "><span style="color:black;">2010</span><br><span style="color:#333399;">100&nbsp;&#37;</span><br><span style="color:#339933;">16.3&nbsp;&#37;</span></td> 
 </tr>
  
 <tr> 
 <td style="padding:0.2cm;  text-align:left; vertical-align:middle;">universit.</td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">54</span><br><span style="color:#333399;">2.5&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">356</span><br><span style="color:#333399;">16.6&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">228</span><br><span style="color:#333399;">10.6&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">1507</span><br><span style="color:#333399;">70.3&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center;  "><span style="color:black;">2145</span><br><span style="color:#333399;">100&nbsp;&#37;</span></td> 
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">54</span><br><span style="color:#333399;">2.5&nbsp;&#37;</span><br><span style="color:#339933;">4&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">356</span><br><span style="color:#333399;">16.6&nbsp;&#37;</span><br><span style="color:#339933;">10&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">228</span><br><span style="color:#333399;">10.6&nbsp;&#37;</span><br><span style="color:#339933;">21.9&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center; "><span style="color:black;">1507</span><br><span style="color:#333399;">70.3&nbsp;&#37;</span><br><span style="color:#339933;">23.5&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center;  "><span style="color:black;">2145</span><br><span style="color:#333399;">100&nbsp;&#37;</span><br><span style="color:#339933;">17.3&nbsp;&#37;</span></td> 
 </tr>
  
 <tr> 
 <td style="padding:0.2cm;  border-bottom:double; font-weight:bolder; font-style:italic; text-align:left; vertical-align:middle;">Total</td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">1362</span><br><span style="color:#333399;">11&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">3543</span><br><span style="color:#333399;">28.7&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">1042</span><br><span style="color:#333399;">8.4&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">6418</span><br><span style="color:#333399;">51.9&nbsp;&#37;</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">12365</span><br><span style="color:#333399;">100&nbsp;&#37;</span></td> 
+<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">1362</span><br><span style="color:#333399;">11&nbsp;&#37;</span><br><span style="color:#339933;">100&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">3543</span><br><span style="color:#333399;">28.7&nbsp;&#37;</span><br><span style="color:#339933;">100&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">1042</span><br><span style="color:#333399;">8.4&nbsp;&#37;</span><br><span style="color:#339933;">100&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">6418</span><br><span style="color:#333399;">51.9&nbsp;&#37;</span><br><span style="color:#339933;">100&nbsp;&#37;</span></td>
+<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">12365</span><br><span style="color:#333399;">100&nbsp;&#37;</span><br><span style="color:#339933;">100&nbsp;&#37;</span></td> 
 </tr>
 <td style="text-align:right; font-size:0.9em; font-style:italic; padding:0.2cm;" colspan="6">&chi;<sup>2</sup>=1202.528 &middot; df=9 &middot; Cramer's V=0.180 &middot; p=0.000</td> 
 </tr>
@@ -465,16 +568,25 @@ obs$relig_dist<-ifelse(obs$alter_relig==obs$ego_relig, 0, 1)
 ### Descriptivos
 
 ``` r
-egltable(c("sexo_dist", "edad_dist", "educ_dist", "ideol_dist", "relig_dist"),
-         data = obs, strict=T) 
+xtable(egltable(c("sexo_dist", "edad_dist", "educ_dist", "ideol_dist", "relig_dist"),
+         data = obs, strict=T))
 ```
 
-                       M (SD)
-           <char>      <char>
-    1:  sexo_dist 0.36 (0.48)
-    2:  edad_dist 0.65 (0.48)
-    3:  educ_dist 0.65 (0.48)
-    4: ideol_dist 0.55 (0.50)
-    5: relig_dist 0.38 (0.49)
+    % latex table generated in R 4.1.2 by xtable 1.8-4 package
+    % Wed Aug  9 19:04:30 2023
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{rll}
+      \hline
+     &  & M (SD) \\ 
+      \hline
+    1 & sexo\_dist & 0.36 (0.48) \\ 
+      2 & edad\_dist & 0.65 (0.48) \\ 
+      3 & educ\_dist & 0.65 (0.48) \\ 
+      4 & ideol\_dist & 0.55 (0.50) \\ 
+      5 & relig\_dist & 0.38 (0.49) \\ 
+       \hline
+    \end{tabular}
+    \end{table}
 
 Esta tabla es la misma de Smith et al. (2014). Describe la media de la distancia sociodemogrpafica por parámetro. Como alternativa, el valor TRUE del argumento `strict` de la función `egltable`, muestra los porcentajes por categoría de la variable dummy.
