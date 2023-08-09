@@ -1,22 +1,20 @@
 ---
 date: 2023-08-10
-
 title: homophily II
-subtitle: E-I index!
+subtitle: E-I index
 author: Roberto Cantillan
-
 show_post_date: true
 show_author_byline: true
-
 draft: false
 
 summary: |
-    In this post I focus on analyzing homophily in a multidimensional way using the `ergm.ego` library, from the `statnet` group. For this I use the data from the Longitudinal Social Study of Chile (ELSOC).
+    En el presente documento se realiza un trabajo de datos para construir una base en formato long con la encuesta COES en su ola w2 y ola w4. Adicionalmente, se analizan datos panel con el modelo within-between (Bell & Jhones, 2014; Bell et al. 2019), ideales para el análisis de estructuras jerárquicas de datos, incluidos los datos datos de series de tiempo (de corte transversal), y de tipo panel. 
 
 format: hugo
-
 freeze: auto
 ---
+
+### EI Index
 
 En el presente documento se realiza un trabajo de datos para construir una base en formato long con la encuesta COES en su ola w2 y ola w4. Adicionalmente, se analizan datos panel con el modelo within-between (Bell & Jhones, 2014; Bell et al. 2019), ideales para el análisis de estructuras jerárquicas de datos, incluidos los datos datos de series de tiempo (de corte transversal), y de tipo panel.
 
