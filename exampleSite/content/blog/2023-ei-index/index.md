@@ -1,7 +1,7 @@
 ---
 date: 2023-08-10
-title: homophily II
-subtitle: E-I index
+title: E-I index
+subtitle: Homophily
 author: Roberto Cantillan
 show_post_date: true
 show_author_byline: true
@@ -13,8 +13,6 @@ summary: |
 format: hugo
 freeze: auto
 ---
-
-### EI Index
 
 {{< figure src="img/Fig14_A_600.gif" caption="Homophily" >}}
 
