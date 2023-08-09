@@ -75,9 +75,6 @@ alteris <- bind_rows(alter_list)
 alteris<-arrange(alteris, .egoID)
 ```
 
-```{r}
-#alteris<-rbind(alter_1,alter_2,alter_3,alter_4,alter_5)
-```
 
 ### Crear vector alter id
 
@@ -152,7 +149,10 @@ egos <-a %>%
                      edad=m0_edad, 
                      educ=m01, 
                      relig=m38, 
-                     ideol=c15)
+                     ideol=c15,
+                     ponderador02,
+                     estrato,
+                     segmento)
 
 egos <- as_tibble(egos)
 ```
@@ -195,35 +195,45 @@ table(egos$barrio)
 ### Crear objeto Egor (requerido para trabajar con función `ergm.ego`)
 
 ```{r}
+# definir diseño complejo
 elsoc_ego <- egor(alters = alteris, 
                   egos = egos,
+                  alter_design = list(max = 5),
                   ID.vars = list(
                     ego = ".egoID",
-                    alter = ".alterID"))
+                    alter = ".alterID")) %>% as.egor()
 
-elsoc_ego<-as.egor(elsoc_ego)
-#View(elsoc_ego$ego)
-#View(elsoc_ego$alter)
+ego_design(elsoc_ego) <- list(weight = "ponderador02",
+                              strata = "estrato",
+                              cluster="segmento") 
 
+# eliminar atributos de diseño
+elsoc_ego[["ego"]][["variables"]][["ponderador02"]]<-NULL
+elsoc_ego[["ego"]][["variables"]][["estrato"]]<-NULL
+elsoc_ego[["ego"]][["variables"]][["segmento"]]<-NULL
 
-elsoc_ego[["ego"]]  <-elsoc_ego[["ego"]]%>%drop_na(sexo)
-elsoc_ego[["alter"]]<-elsoc_ego[["alter"]]%>%drop_na(sexo)
-elsoc_ego[["ego"]]  <-elsoc_ego[["ego"]]%>%drop_na(educ)
-elsoc_ego[["alter"]]<-elsoc_ego[["alter"]]%>%drop_na(educ)
-elsoc_ego[["ego"]]  <-elsoc_ego[["ego"]]%>%drop_na(relig)
-elsoc_ego[["alter"]]<-elsoc_ego[["alter"]]%>%drop_na(relig)
-elsoc_ego[["ego"]]  <-elsoc_ego[["ego"]]%>%drop_na(ideol)
-elsoc_ego[["alter"]]<-elsoc_ego[["alter"]]%>%drop_na(ideol)
-elsoc_ego[["ego"]]<-elsoc_ego[["ego"]]%>%drop_na(barrio)
-elsoc_ego[["alter"]]<-elsoc_ego[["alter"]]%>%drop_na(barrio)
+# drop NA
+variables <- c("sexo", "educ", "relig", "ideol", "barrio")
+for (variable in variables) {
+  elsoc_ego[["ego"]] <- elsoc_ego[["ego"]] %>% drop_na({{ variable }})
+  elsoc_ego[["alter"]] <- elsoc_ego[["alter"]] %>% drop_na({{ variable }})
+}
+
+as_tibble(elsoc_ego$alter)
 ```
 
 
 ### Degree distribution
+
+#### Educación 
 ```{r}
-degreedist(elsoc_ego, by="educ", prob=T, plot = T, brgmod = T)
+degreedist(elsoc_ego, by="educ", prob=T, plot = T, weight=TRUE)
 ```
 
+#### Sexo
+```{r}
+degreedist(elsoc_ego, by="sexo", prob=T, plot = T, weight=TRUE)
+```
 
 
 # Modelos
@@ -233,10 +243,24 @@ degreedist(elsoc_ego, by="educ", prob=T, plot = T, brgmod = T)
 El paquete "ergm" proporciona no sólo estadísticas resumidas sino también valores-p. Sin embargo, como indica Kolaczyk y Csárdi (2020), la justificación teórica para las distribuciones asintóticas chi-cuadrado y F utilizadas por `ergm` para calcular estos valores no se ha establecido hasta la fecha. Por lo tanto, puede ser pertinente interpretar estos valores de manera informal, como estadísticas resumidas adicionales. 
 
 
+
+
+```{r}
+## Set # replicates
+reps = 1
+## Set ppop size and construction
+ppop = 15000
+ppopwt = 'round' # Round gives consistent netsize/composition
+constraint.formula <- (~ bd(maxout = 5)) # constraint por grado máximo para cada ego. 
+```
+
+
 ## Modelo 1
 ```{r, message=FALSE}
 modelo1<-ergm.ego(elsoc_ego~
-                    nodefactor("sexo") +
+                    #edges + 
+                    #degree(1:5) +
+                    nodefactor("sexo", levels = -2) +
                     nodefactor("educ") +
                     nodefactor("ideol") +
                     nodefactor("relig") +
@@ -245,12 +269,11 @@ modelo1<-ergm.ego(elsoc_ego~
                     nodematch("ideol", diff=TRUE)+
                     nodematch("relig", diff=TRUE)+
                     absdiff("edad"),
-                 control=control.ergm.ego(ppopsize="samp",
-                                           ppop.wt="sample",
-                                           stats.wt="data",
-                                           stats.est="survey"),
-                  ignore.max.alters=F,
-                  boot.R = 10000,
+                 constraints = constraint.formula,
+                 control=control.ergm.ego(ppopsize=5000,
+                                         ppop.wt=ppopwt,
+                                         stats.wt="data",
+                                         stats.est="survey"),
                   ergm = control.ergm(init.method = "MPLE",
                                       init.MPLE.samplesize = 5e7,
                                       MPLE.constraints.ignore = TRUE,
@@ -260,7 +283,9 @@ modelo1<-ergm.ego(elsoc_ego~
                                       MCMC.samplesize = 1000000,
                                       parallel = 16,
                                       SAN.nsteps = 5e7))
-                      
+
+#?control.ergm.ego
+#??ignore.max.alters
 ```
 
 
@@ -289,10 +314,30 @@ plot(gof(modelo1))
 Considerando las características particulares capturadas por las estadísticas, el ajuste del modelo es bastante bueno en general, toda vez que las estadísticas observadas están bastante cerca de la mediana de los valores simulados en la mayoría de los casos. 
 
 
+```{r}
+plot(gof(modelo1, GOF="degree"))
+```
+
+
 ### MCMC
 ```{r}
-mcmc.diagnostics(modelo1)
+mcmc.diagnostics(modelo1, which = "plots")
 ```
+
+### simulate
+```{r}
+sim.modelo1 <- simulate(modelo1, popsize=500,
+                       control=control.simulate.ergm.ego(
+                       simulate=control.simulate.formula(MCMC.burnin=2e6)))
+```
+
+
+```{r}
+plot(sim.modelo1, vertex.col="educ")
+legend('bottomleft',fill=1:4,legend=paste('Eduación',1:4),cex=0.75)
+```
+
+
 
 ### Tidy
 ```{r}
