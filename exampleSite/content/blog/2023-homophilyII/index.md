@@ -320,7 +320,7 @@ ggplot(data=hom_tam, aes(x=tamred, y=Freq, fill=alter, na.rm=T),
   theme_light()
 ```
 
-<img src="EI_long_manual.markdown_strict_files/figure-markdown_strict/unnamed-chunk-11-1.png" width="768" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-11-1.png" width="768" />
 
 ### Homofilia por posición política
 
@@ -365,7 +365,7 @@ ggplot(data=qq3, aes(x=ego, y=Freq, fill=alter),  weight = ponderador01) +
     theme_light()
 ```
 
-<img src="EI_long_manual.markdown_strict_files/figure-markdown_strict/unnamed-chunk-12-1.png" width="768" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-12-1.png" width="768" />
 
 ### Cálculo E-I homofilia por posición política (ELSOC 2017)
 
@@ -558,4 +558,4 @@ pp<-ggplot(data=ego2017) +
 pp
 ```
 
-<img src="EI_long_manual.markdown_strict_files/figure-markdown_strict/unnamed-chunk-18-1.png" width="768" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-18-1.png" width="768" />
