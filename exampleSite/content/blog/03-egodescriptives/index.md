@@ -18,6 +18,10 @@ format: hugo
 freeze: auto
 ---
 
+<script src="index_files/libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
 {{< figure src="img/egor.png" caption="Egonetwork" >}}
 
 El prsente documento tiene por objetivo realizar la construcción de una bbdd de egos y alteris (anidados) en formato long para anáisis posteriores considerando ELSOC 2017 (w2) y 2019 (w4). Términamos con la construcción de tablas de descriptivos y la construcción de vectores de "distancia sociodemográfica" (mismatch) de parámetros de relevancia evidenciados en el paper de Bargsted et al., (2020) para el caso chileno.
@@ -30,7 +34,7 @@ pacman::p_load(ggplot2,ggthemes,tidyverse,sjlabelled,sjPlot,vcd,texreg,ordinal,
                survey,egor,haven,car,dplyr,stargazer,janitor,gridExtra,ggeffects,
                haven,summarytools,skimr,weights,ggcorrplot,ggridges,panelr,
                GLMMadaptive,survival,R.utils,questionr,car,corrplot,hrbrthemes,
-               viridis,extrafont,JWileymisc,xtable)
+               viridis,extrafont,JWileymisc,xtable,kableExtra)
 ```
 
 ### 2017
@@ -49,7 +53,7 @@ a<-elsoc_2017 %>% rename(.egoID = idencuesta)
 b<-elsoc_2019 %>% rename(.egoID = idencuesta)
 ```
 
-## Crear data frame alteris para 2017=a1
+### Crear data frame alteris para 2017=a1
 
 Creamos subset con data de cada uno de los alteris mencionados, manteniendo el ID de cada ego en el cual están anidados. Las columnas de cada uno de los subset deben tener los mismos nombres.
 
@@ -110,7 +114,7 @@ alter_5<-a %>%
                       alter_ideol=r13_ideol_05)
 ```
 
-## setear
+### setear
 
 Creamos un vector adicional en cada subset de alteris con un número constante que identifica a que alter representa la data.
 
@@ -200,221 +204,131 @@ obs[obs=="-888"] <- NA
 Observamos la frecuencia de las categorias de los atributos de alteris.
 
 ``` r
-xtable(freq(obs$alter_educ))
+kbl(freq(obs$alter_educ)) %>%kable_paper()
 ```
 
-    % latex table generated in R 4.1.2 by xtable 1.8-4 package
-    % Wed Aug  9 19:04:30 2023
-    \begin{table}[ht]
-    \centering
-    \begin{tabular}{rrrr}
-      \hline
-     & n & \% & val\% \\ 
-      \hline
-    1 & 1362.00 & 11.00 & 17.80 \\ 
-      2 & 3543.00 & 28.70 & 46.20 \\ 
-      3 & 1042.00 & 8.40 & 13.60 \\ 
-      4 & 1719.00 & 13.90 & 22.40 \\ 
-      NA & 4699.00 & 38.00 &  \\ 
-       \hline
-    \end{tabular}
-    \end{table}
+|     |    n |    % | val% |
+|:----|-----:|-----:|-----:|
+| 1   | 1362 | 11.0 | 17.8 |
+| 2   | 3543 | 28.7 | 46.2 |
+| 3   | 1042 |  8.4 | 13.6 |
+| 4   | 1719 | 13.9 | 22.4 |
+| NA  | 4699 | 38.0 |   NA |
 
 ``` r
-xtable(freq(obs$alter_relig))
+kbl(freq(obs$alter_relig))%>%kable_paper()
 ```
 
-    % latex table generated in R 4.1.2 by xtable 1.8-4 package
-    % Wed Aug  9 19:04:30 2023
-    \begin{table}[ht]
-    \centering
-    \begin{tabular}{rrrr}
-      \hline
-     & n & \% & val\% \\ 
-      \hline
-    1 & 4907.00 & 39.70 & 60.80 \\ 
-      2 & 1407.00 & 11.40 & 17.40 \\ 
-      3 & 1128.00 & 9.10 & 14.00 \\ 
-      4 & 251.00 & 2.00 & 3.10 \\ 
-      5 & 373.00 & 3.00 & 4.60 \\ 
-      NA & 4299.00 & 34.80 &  \\ 
-       \hline
-    \end{tabular}
-    \end{table}
+|     |    n |    % | val% |
+|:----|-----:|-----:|-----:|
+| 1   | 4907 | 39.7 | 60.8 |
+| 2   | 1407 | 11.4 | 17.4 |
+| 3   | 1128 |  9.1 | 14.0 |
+| 4   |  251 |  2.0 |  3.1 |
+| 5   |  373 |  3.0 |  4.6 |
+| NA  | 4299 | 34.8 |   NA |
 
 ``` r
-xtable(freq(obs$alter_ideol))
+kbl(freq(obs$alter_ideol))%>%kable_paper()
 ```
 
-    % latex table generated in R 4.1.2 by xtable 1.8-4 package
-    % Wed Aug  9 19:04:30 2023
-    \begin{table}[ht]
-    \centering
-    \begin{tabular}{rrrr}
-      \hline
-     & n & \% & val\% \\ 
-      \hline
-    1 & 786.00 & 6.40 & 11.10 \\ 
-      2 & 191.00 & 1.50 & 2.70 \\ 
-      3 & 382.00 & 3.10 & 5.40 \\ 
-      4 & 303.00 & 2.50 & 4.30 \\ 
-      5 & 759.00 & 6.10 & 10.70 \\ 
-      6 & 4644.00 & 37.60 & 65.70 \\ 
-      NA & 5300.00 & 42.90 &  \\ 
-       \hline
-    \end{tabular}
-    \end{table}
+|     |    n |    % | val% |
+|:----|-----:|-----:|-----:|
+| 1   |  786 |  6.4 | 11.1 |
+| 2   |  191 |  1.5 |  2.7 |
+| 3   |  382 |  3.1 |  5.4 |
+| 4   |  303 |  2.5 |  4.3 |
+| 5   |  759 |  6.1 | 10.7 |
+| 6   | 4644 | 37.6 | 65.7 |
+| NA  | 5300 | 42.9 |   NA |
 
 ``` r
-xtable(freq(obs$alter_edad))
+kbl(freq(obs$alter_edad)) %>%kable_paper()
 ```
 
-    % latex table generated in R 4.1.2 by xtable 1.8-4 package
-    % Wed Aug  9 19:04:30 2023
-    \begin{table}[ht]
-    \centering
-    \begin{tabular}{rrrr}
-      \hline
-     & n & \% & val\% \\ 
-      \hline
-    1 & 349.00 & 2.80 & 4.30 \\ 
-      2 & 1477.00 & 11.90 & 18.30 \\ 
-      3 & 1875.00 & 15.20 & 23.20 \\ 
-      4 & 1713.00 & 13.90 & 21.20 \\ 
-      5 & 1466.00 & 11.90 & 18.20 \\ 
-      6 & 1186.00 & 9.60 & 14.70 \\ 
-      NA & 4299.00 & 34.80 &  \\ 
-       \hline
-    \end{tabular}
-    \end{table}
+|     |    n |    % | val% |
+|:----|-----:|-----:|-----:|
+| 1   |  349 |  2.8 |  4.3 |
+| 2   | 1477 | 11.9 | 18.3 |
+| 3   | 1875 | 15.2 | 23.2 |
+| 4   | 1713 | 13.9 | 21.2 |
+| 5   | 1466 | 11.9 | 18.2 |
+| 6   | 1186 |  9.6 | 14.7 |
+| NA  | 4299 | 34.8 |   NA |
 
 ``` r
-xtable(freq(obs$alter_sexo))
+kbl(freq(obs$alter_sexo)) %>%kable_paper()
 ```
 
-    % latex table generated in R 4.1.2 by xtable 1.8-4 package
-    % Wed Aug  9 19:04:30 2023
-    \begin{table}[ht]
-    \centering
-    \begin{tabular}{rrrr}
-      \hline
-     & n & \% & val\% \\ 
-      \hline
-    1 & 3388.00 & 27.40 & 42.00 \\ 
-      2 & 4678.00 & 37.80 & 58.00 \\ 
-      NA & 4299.00 & 34.80 &  \\ 
-       \hline
-    \end{tabular}
-    \end{table}
+|     |    n |    % | val% |
+|:----|-----:|-----:|-----:|
+| 1   | 3388 | 27.4 |   42 |
+| 2   | 4678 | 37.8 |   58 |
+| NA  | 4299 | 34.8 |   NA |
 
 ### Descriptivos (ego)
 
 Observamos la frecuencia de las categorias de los atributos sociodemográficos de ego.
 
 ``` r
-xtable(freq(obs$ego_educ))
+kbl(freq(obs$ego_educ)) %>%kable_paper()
 ```
 
-    % latex table generated in R 4.1.2 by xtable 1.8-4 package
-    % Wed Aug  9 19:04:30 2023
-    \begin{table}[ht]
-    \centering
-    \begin{tabular}{rrrr}
-      \hline
-     & n & \% & val\% \\ 
-      \hline
-    1 & 2985.00 & 24.10 & 24.10 \\ 
-      2 & 5225.00 & 42.30 & 42.30 \\ 
-      3 & 2010.00 & 16.30 & 16.30 \\ 
-      4 & 2145.00 & 17.30 & 17.30 \\ 
-       \hline
-    \end{tabular}
-    \end{table}
+|    n |    % | val% |
+|-----:|-----:|-----:|
+| 2985 | 24.1 | 24.1 |
+| 5225 | 42.3 | 42.3 |
+| 2010 | 16.3 | 16.3 |
+| 2145 | 17.3 | 17.3 |
 
 ``` r
-xtable(freq(obs$ego_relig))
+kbl(freq(obs$ego_relig))%>%kable_paper()
 ```
 
-    % latex table generated in R 4.1.2 by xtable 1.8-4 package
-    % Wed Aug  9 19:04:30 2023
-    \begin{table}[ht]
-    \centering
-    \begin{tabular}{rrrr}
-      \hline
-     & n & \% & val\% \\ 
-      \hline
-    1 & 6915.00 & 55.90 & 56.10 \\ 
-      2 & 2495.00 & 20.20 & 20.20 \\ 
-      3 & 1055.00 & 8.50 & 8.60 \\ 
-      4 & 485.00 & 3.90 & 3.90 \\ 
-      5 & 1380.00 & 11.20 & 11.20 \\ 
-      NA & 35.00 & 0.30 &  \\ 
-       \hline
-    \end{tabular}
-    \end{table}
+|     |    n |    % | val% |
+|:----|-----:|-----:|-----:|
+| 1   | 6915 | 55.9 | 56.1 |
+| 2   | 2495 | 20.2 | 20.2 |
+| 3   | 1055 |  8.5 |  8.6 |
+| 4   |  485 |  3.9 |  3.9 |
+| 5   | 1380 | 11.2 | 11.2 |
+| NA  |   35 |  0.3 |   NA |
 
 ``` r
-xtable(freq(obs$ego_ideol))
+kbl(freq(obs$ego_ideol))%>%kable_paper()
 ```
 
-    % latex table generated in R 4.1.2 by xtable 1.8-4 package
-    % Wed Aug  9 19:04:30 2023
-    \begin{table}[ht]
-    \centering
-    \begin{tabular}{rrrr}
-      \hline
-     & n & \% & val\% \\ 
-      \hline
-    1 & 915.00 & 7.40 & 7.50 \\ 
-      2 & 1090.00 & 8.80 & 8.90 \\ 
-      3 & 2350.00 & 19.00 & 19.20 \\ 
-      4 & 1380.00 & 11.20 & 11.30 \\ 
-      5 & 1075.00 & 8.70 & 8.80 \\ 
-      6 & 5400.00 & 43.70 & 44.20 \\ 
-      NA & 155.00 & 1.30 &  \\ 
-       \hline
-    \end{tabular}
-    \end{table}
+|     |    n |    % | val% |
+|:----|-----:|-----:|-----:|
+| 1   |  915 |  7.4 |  7.5 |
+| 2   | 1090 |  8.8 |  8.9 |
+| 3   | 2350 | 19.0 | 19.2 |
+| 4   | 1380 | 11.2 | 11.3 |
+| 5   | 1075 |  8.7 |  8.8 |
+| 6   | 5400 | 43.7 | 44.2 |
+| NA  |  155 |  1.3 |   NA |
 
 ``` r
-xtable(freq(obs$ego_edad))
+kbl(freq(obs$ego_edad)) %>%kable_paper()
 ```
 
-    % latex table generated in R 4.1.2 by xtable 1.8-4 package
-    % Wed Aug  9 19:04:30 2023
-    \begin{table}[ht]
-    \centering
-    \begin{tabular}{rrrr}
-      \hline
-     & n & \% & val\% \\ 
-      \hline
-    1 & 10.00 & 0.10 & 0.10 \\ 
-      2 & 1865.00 & 15.10 & 15.10 \\ 
-      3 & 2530.00 & 20.50 & 20.50 \\ 
-      4 & 2720.00 & 22.00 & 22.00 \\ 
-      5 & 2870.00 & 23.20 & 23.20 \\ 
-      6 & 2370.00 & 19.20 & 19.20 \\ 
-       \hline
-    \end{tabular}
-    \end{table}
+|    n |    % | val% |
+|-----:|-----:|-----:|
+|   10 |  0.1 |  0.1 |
+| 1865 | 15.1 | 15.1 |
+| 2530 | 20.5 | 20.5 |
+| 2720 | 22.0 | 22.0 |
+| 2870 | 23.2 | 23.2 |
+| 2370 | 19.2 | 19.2 |
 
 ``` r
-xtable(freq(obs$ego_sexo))
+kbl(freq(obs$ego_sexo)) %>%kable_paper()
 ```
 
-    % latex table generated in R 4.1.2 by xtable 1.8-4 package
-    % Wed Aug  9 19:04:30 2023
-    \begin{table}[ht]
-    \centering
-    \begin{tabular}{rrrr}
-      \hline
-     & n & \% & val\% \\ 
-      \hline
-    1 & 4755.00 & 38.50 & 38.50 \\ 
-      2 & 7610.00 & 61.50 & 61.50 \\ 
-       \hline
-    \end{tabular}
-    \end{table}
+|    n |    % | val% |
+|-----:|-----:|-----:|
+| 4755 | 38.5 | 38.5 |
+| 7610 | 61.5 | 61.5 |
 
 ### Croos tab educ
 
@@ -568,25 +482,15 @@ obs$relig_dist<-ifelse(obs$alter_relig==obs$ego_relig, 0, 1)
 ### Descriptivos
 
 ``` r
-xtable(egltable(c("sexo_dist", "edad_dist", "educ_dist", "ideol_dist", "relig_dist"),
-         data = obs, strict=T))
+kbl(egltable(c("sexo_dist", "edad_dist", "educ_dist", "ideol_dist", "relig_dist"),data = obs, strict=T))%>%  kable_paper()
 ```
 
-    % latex table generated in R 4.1.2 by xtable 1.8-4 package
-    % Wed Aug  9 19:04:30 2023
-    \begin{table}[ht]
-    \centering
-    \begin{tabular}{rll}
-      \hline
-     &  & M (SD) \\ 
-      \hline
-    1 & sexo\_dist & 0.36 (0.48) \\ 
-      2 & edad\_dist & 0.65 (0.48) \\ 
-      3 & educ\_dist & 0.65 (0.48) \\ 
-      4 & ideol\_dist & 0.55 (0.50) \\ 
-      5 & relig\_dist & 0.38 (0.49) \\ 
-       \hline
-    \end{tabular}
-    \end{table}
+|            | M (SD)      |
+|:-----------|:------------|
+| sexo_dist  | 0.36 (0.48) |
+| edad_dist  | 0.65 (0.48) |
+| educ_dist  | 0.65 (0.48) |
+| ideol_dist | 0.55 (0.50) |
+| relig_dist | 0.38 (0.49) |
 
 Esta tabla es la misma de Smith et al. (2014). Describe la media de la distancia sociodemogrpafica por parámetro. Como alternativa, el valor TRUE del argumento `strict` de la función `egltable`, muestra los porcentajes por categoría de la variable dummy.

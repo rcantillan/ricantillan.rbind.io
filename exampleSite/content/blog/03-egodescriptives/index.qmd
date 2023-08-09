@@ -32,7 +32,7 @@ pacman::p_load(ggplot2,ggthemes,tidyverse,sjlabelled,sjPlot,vcd,texreg,ordinal,
                survey,egor,haven,car,dplyr,stargazer,janitor,gridExtra,ggeffects,
                haven,summarytools,skimr,weights,ggcorrplot,ggridges,panelr,
                GLMMadaptive,survival,R.utils,questionr,car,corrplot,hrbrthemes,
-               viridis,extrafont,JWileymisc,xtable)
+               viridis,extrafont,JWileymisc,xtable,kableExtra)
 ```
 
 
@@ -49,7 +49,7 @@ a<-elsoc_2017 %>% rename(.egoID = idencuesta)
 b<-elsoc_2019 %>% rename(.egoID = idencuesta)
 ```
 
-## Crear data frame alteris para 2017=a1
+### Crear data frame alteris para 2017=a1
 
 Creamos subset con data de cada uno de los alteris mencionados, manteniendo el ID de cada ego en el cual están anidados. Las columnas de cada uno de los subset deben tener los mismos nombres. 
 ```{r}
@@ -109,7 +109,7 @@ alter_5<-a %>%
                       alter_ideol=r13_ideol_05)
 ```
 
-## setear
+### setear
 
 Creamos un vector adicional en cada subset de alteris con un número constante que identifica a que alter representa la data. 
 ```{r}
@@ -194,22 +194,22 @@ obs[obs=="-888"] <- NA
 
 Observamos la frecuencia de las categorias de los atributos de alteris. 
 ```{r}
-xtable(freq(obs$alter_educ))
-xtable(freq(obs$alter_relig))
-xtable(freq(obs$alter_ideol))
-xtable(freq(obs$alter_edad))
-xtable(freq(obs$alter_sexo))
+kbl(freq(obs$alter_educ)) %>%kable_paper()
+kbl(freq(obs$alter_relig))%>%kable_paper()
+kbl(freq(obs$alter_ideol))%>%kable_paper()
+kbl(freq(obs$alter_edad)) %>%kable_paper()
+kbl(freq(obs$alter_sexo)) %>%kable_paper()
 ```
 
 ### Descriptivos (ego)
 
 Observamos la frecuencia de las categorias de los atributos sociodemográficos de ego. 
 ```{r}
-xtable(freq(obs$ego_educ))
-xtable(freq(obs$ego_relig))
-xtable(freq(obs$ego_ideol))
-xtable(freq(obs$ego_edad))
-xtable(freq(obs$ego_sexo))
+kbl(freq(obs$ego_educ)) %>%kable_paper()
+kbl(freq(obs$ego_relig))%>%kable_paper()
+kbl(freq(obs$ego_ideol))%>%kable_paper()
+kbl(freq(obs$ego_edad)) %>%kable_paper()
+kbl(freq(obs$ego_sexo)) %>%kable_paper()
 ```
 
 
@@ -287,8 +287,7 @@ obs$relig_dist<-ifelse(obs$alter_relig==obs$ego_relig, 0, 1)
 ### Descriptivos 
 
 ```{r}
-xtable(egltable(c("sexo_dist", "edad_dist", "educ_dist", "ideol_dist", "relig_dist"),
-         data = obs, strict=T))
+kbl(egltable(c("sexo_dist", "edad_dist", "educ_dist", "ideol_dist", "relig_dist"),data = obs, strict=T))%>%  kable_paper()
 ```
 
 Esta tabla es la misma de Smith et al. (2014). Describe la media de la distancia sociodemogrpafica por parámetro. Como alternativa, el valor TRUE del argumento `strict` de la función `egltable`, muestra los porcentajes por categoría de la variable dummy.
