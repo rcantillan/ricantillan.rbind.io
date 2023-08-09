@@ -14,15 +14,10 @@ layout: list-sidebar # list, list-sidebar, list-grid
 
 # for list-sidebar layout
 sidebar: 
-  title: A Sidebar for Your Thoughts
+  title: Notes Junction
   description: |
-    This is a fully featured blog that supports categories,
-    tags, series, and pagination. Even this sidebar offers 
-    a ton of customizations.
-    
-    Check out the _index.md file in the /blog folder 
-    to edit this content. 
-  author: "The R Markdown Team @RStudio"
+    "Step into a realm where the quantitative social network analysis is illuminated through the powerful lens of the R language. Here, programming intertwines with abundant data extracted from egocentric and sociocentric networks. Embark on an enlightening journey that delves into topics such as Social Capital, Social Inequalities, and Social Network Analysis—a perspective tailored to unveil the multifaceted layers of societal dynamics. This landscape provides a gateway to a sophisticated comprehension of societal structures and fervently encourages you to share and enhance your insights openly." 
+  author: "Roberto Cantillan"
   text_link_label: Subscribe via RSS
   text_link_url: /index.xml
   categories_link: true
