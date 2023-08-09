@@ -81,6 +81,11 @@ googleAnalytics = "G-CSC1TRYSDL"
     url = "/pubs/"
     weight = 2
   [[menu.header]]
+    name = "Talks"
+    title = "Talks"
+    url = "/talk/"
+    weight = 2
+  [[menu.header]]
     name = "Contact"
     title = "Contact"
     url = "/contact/"
