@@ -38,9 +38,9 @@ library(questionr)
 
 ### Data
 ```{r}
-load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/data/ELSOC/ELSOC/ELSOC_W02_v3.00_R.RData")
-load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/data/ELSOC/ELSOC/ELSOC_W04_v2.01_R.RData")
-load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/data/ELSOC/ELSOC/ELSOC_W01_v4.01_R.RData")
+load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/data/ELSOC/ELSOC_W02_v3.00_R.RData")
+load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/data/ELSOC/ELSOC_W04_v2.01_R.RData")
+load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/data/ELSOC/ELSOC_W01_v4.01_R.RData")
 ```
 
 

@@ -21,6 +21,161 @@ format: hugo
 freeze: auto
 ---
 
+### Librerías
+
+``` r
+library(ergm)
+```
+
+    Loading required package: network
+
+
+    'network' 1.18.1 (2023-01-24), part of the Statnet Project
+    * 'news(package="network")' for changes since last version
+    * 'citation("network")' for citation information
+    * 'https://statnet.org' for help, support, and other information
+
+
+    'ergm' 4.5.0 (2023-05-27), part of the Statnet Project
+    * 'news(package="ergm")' for changes since last version
+    * 'citation("ergm")' for citation information
+    * 'https://statnet.org' for help, support, and other information
+
+    'ergm' 4 is a major update that introduces some backwards-incompatible
+    changes. Please type 'news(package="ergm")' for a list of major
+    changes.
+
+``` r
+library(ergm.ego)
+```
+
+    Loading required package: egor
+
+    Loading required package: dplyr
+
+
+    Attaching package: 'dplyr'
+
+    The following objects are masked from 'package:stats':
+
+        filter, lag
+
+    The following objects are masked from 'package:base':
+
+        intersect, setdiff, setequal, union
+
+    Loading required package: tibble
+
+
+    'ergm.ego' 1.0.1 (2022-05-26), part of the Statnet Project
+    * 'news(package="ergm.ego")' for changes since last version
+    * 'citation("ergm.ego")' for citation information
+    * 'https://statnet.org' for help, support, and other information
+
+
+    Attaching package: 'ergm.ego'
+
+    The following objects are masked from 'package:ergm':
+
+        COLLAPSE_SMALLEST, snctrl
+
+    The following object is masked from 'package:base':
+
+        sample
+
+``` r
+library(car)
+```
+
+    Loading required package: carData
+
+
+    Attaching package: 'car'
+
+    The following object is masked from 'package:dplyr':
+
+        recode
+
+``` r
+library(egor)
+library(tidyverse)
+```
+
+    ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+    ✔ forcats   1.0.0     ✔ readr     2.1.4
+    ✔ ggplot2   3.4.2     ✔ stringr   1.5.0
+    ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+    ✔ purrr     1.0.1     
+
+    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+    ✖ dplyr::filter() masks stats::filter()
+    ✖ dplyr::lag()    masks stats::lag()
+    ✖ car::recode()   masks dplyr::recode()
+    ✖ purrr::some()   masks car::some()
+    ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+``` r
+library(tibble)
+library(texreg)
+```
+
+    Version:  1.38.6
+    Date:     2022-04-06
+    Author:   Philip Leifeld (University of Essex)
+
+    Consider submitting praise using the praise or praise_interactive functions.
+    Please cite the JSS article in your publications -- see citation("texreg").
+
+    Attaching package: 'texreg'
+
+    The following object is masked from 'package:tidyr':
+
+        extract
+
+``` r
+library(prioritizr)
+```
+
+    Loading required package: sp
+    The legacy packages maptools, rgdal, and rgeos, underpinning the sp package,
+    which was just loaded, will retire in October 2023.
+    Please refer to R-spatial evolution reports for details, especially
+    https://r-spatial.org/r/2023/05/15/evolution4.html.
+    It may be desirable to make the sf package available;
+    package maintainers should consider adding sf to Suggests:.
+    The sp package is now running under evolution status 2
+         (status 2 uses the sf package in place of rgdal)
+    Loading required package: raster
+
+    Attaching package: 'raster'
+
+    The following object is masked from 'package:dplyr':
+
+        select
+
+    Loading required package: sf
+    Linking to GEOS 3.10.2, GDAL 3.4.1, PROJ 8.2.1; sf_use_s2() is TRUE
+    Loading required package: proto
+
+``` r
+library(questionr)
+```
+
+
+    Attaching package: 'questionr'
+
+    The following object is masked from 'package:raster':
+
+        freq
+
+### Data
+
+``` r
+load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/data/ELSOC/ELSOC_W02_v3.00_R.RData")
+load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/data/ELSOC/ELSOC_W04_v2.01_R.RData")
+load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/data/ELSOC/ELSOC_W01_v4.01_R.RData")
+```
+
 I recently noticed that I probably don't spend as much time writing as I
 should. *This is the kind of thoughts you can get by doing a
 PhD*. This post is me trying to address this problem. Let's write more, let's
