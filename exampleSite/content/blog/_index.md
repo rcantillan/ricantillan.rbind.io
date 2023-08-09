@@ -13,7 +13,7 @@ layout: list-sidebar # list, list-sidebar, list-grid
 
 # for list-sidebar layout
 sidebar: 
-  title: Notes Junction
+  title: Notes & Insights
   description: |
     "Step into a realm where the quantitative social network analysis is illuminated through the powerful lens of the R language. Here, programming intertwines with abundant data extracted from egocentric and sociocentric networks. Embark on an enlightening journey that delves into topics such as Social Capital, Social Inequalities, and Social Network Analysis—a perspective tailored to unveil the multifaceted layers of societal dynamics. This landscape provides a gateway to a sophisticated comprehension of societal structures and fervently encourages you to share and enhance your insights openly." 
   author: "Roberto Cantillan"
