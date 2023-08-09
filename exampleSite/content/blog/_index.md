@@ -1,9 +1,8 @@
 ---
-title: A Blog That Works
+title: Notes & Insights
 description: |
-  This is a fully featured blog that supports categories, 
-  tags, series, and pagination.
-author: "The R Markdown Team @RStudio"
+  Step into a realm where the quantitative social network analysis is illuminated through the powerful lens of the R language. Here, programming intertwines with abundant data extracted from egocentric and sociocentric networks. Embark on an enlightening journey that delves into topics such as Social Capital, Social Inequalities, and Social Network Analysis—a perspective tailored to unveil the multifaceted layers of societal dynamics. This landscape provides a gateway to a sophisticated comprehension of societal structures and fervently encourages you to share and enhance your insights openly.
+author: "Roberto Cantillan"
 show_post_thumbnail: true
 thumbnail_left: true # for list-sidebar only
 show_author_byline: true
