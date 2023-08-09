@@ -11,10 +11,7 @@ show_author_byline: true
 draft: false
 
 summary: |
-    Follow me on a journey to build this website. The idea is to have a 
-    system that has the fewest steps as  possible to go from a blog post on 
-    my computer to a website living online. Among other, I discuss about 
-    Quarto, Hugo, Github, and Netlify.
+    In this post I focus on analyzing homophily in a multidimensional way using the `ergm.ego` library, from the `statnet` group. For this I use the data from the Longitudinal Social Study of Chile (ELSOC).
 
 format: hugo
 
@@ -313,7 +310,7 @@ table(egos$barrio)
 
 
        1    2 
-    1489  984 
+    1482  991 
 
 # Crear objeto Egor (requerido para trabajar con función `ergm.ego`)
 
@@ -387,8 +384,8 @@ summary(modelo6)
 
                         Estimate Std. Error MCMC % z value Pr(>|z|)    
     offset(netsize.adj) -7.79811    0.00000      0    -Inf   <1e-04 ***
-    nodematch.sexo.1     1.55069    0.03335      0   46.50   <1e-04 ***
-    nodematch.sexo.2     1.00902    0.02726      0   37.01   <1e-04 ***
+    nodematch.sexo.1     1.41764    0.03517      0   40.31   <1e-04 ***
+    nodematch.sexo.2     1.08673    0.02140      0   50.77   <1e-04 ***
     ---
     Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -439,12 +436,12 @@ summary(modelo7)
 
                         Estimate Std. Error MCMC % z value Pr(>|z|)    
     offset(netsize.adj) -7.79811    0.00000      0    -Inf   <1e-04 ***
-    nodematch.sexo.1     0.82783    0.04031      0   20.54   <1e-04 ***
-    nodematch.sexo.2     0.74526    0.03141      0   23.73   <1e-04 ***
-    nodematch.educ.1     0.73462    0.06671      0   11.01   <1e-04 ***
-    nodematch.educ.2     0.89934    0.04072      0   22.08   <1e-04 ***
-    nodematch.educ.3     1.22497    0.08336      0   14.70   <1e-04 ***
-    nodematch.educ.4     1.86890    0.06688      0   27.95   <1e-04 ***
+    nodematch.sexo.1     1.00413    0.04220      0   23.80   <1e-04 ***
+    nodematch.sexo.2     0.62111    0.03159      0   19.66   <1e-04 ***
+    nodematch.educ.1     1.02375    0.06650      0   15.40   <1e-04 ***
+    nodematch.educ.2     0.83107    0.04366      0   19.03   <1e-04 ***
+    nodematch.educ.3     1.09042    0.08167      0   13.35   <1e-04 ***
+    nodematch.educ.4     1.88021    0.06496      0   28.94   <1e-04 ***
     ---
     Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -497,16 +494,16 @@ summary(modelo8)
 
                         Estimate Std. Error MCMC % z value Pr(>|z|)    
     offset(netsize.adj) -7.79811    0.00000      0    -Inf   <1e-04 ***
-    nodematch.sexo.1     0.63415    0.04094      0  15.490   <1e-04 ***
-    nodematch.sexo.2     0.22226    0.03093      0   7.185   <1e-04 ***
-    nodematch.educ.1     0.47147    0.06440      0   7.321   <1e-04 ***
-    nodematch.educ.2     0.51774    0.04370      0  11.849   <1e-04 ***
-    nodematch.educ.3     1.00503    0.07726      0  13.008   <1e-04 ***
-    nodematch.educ.4     1.69707    0.06201      0  27.367   <1e-04 ***
-    nodematch.relig.1    0.88441    0.03428      0  25.798   <1e-04 ***
-    nodematch.relig.2    1.72815    0.06308      0  27.398   <1e-04 ***
-    nodematch.relig.3    0.94944    0.14308      0   6.636   <1e-04 ***
-    nodematch.relig.4    1.63248    0.08149      0  20.033   <1e-04 ***
+    nodematch.sexo.1     0.62041    0.04460      0  13.912   <1e-04 ***
+    nodematch.sexo.2     0.20361    0.03182      0   6.400   <1e-04 ***
+    nodematch.educ.1     0.45352    0.06408      0   7.077   <1e-04 ***
+    nodematch.educ.2     0.57666    0.04036      0  14.289   <1e-04 ***
+    nodematch.educ.3     0.87965    0.08176      0  10.759   <1e-04 ***
+    nodematch.educ.4     1.74050    0.06633      0  26.239   <1e-04 ***
+    nodematch.relig.1    0.96146    0.03835      0  25.070   <1e-04 ***
+    nodematch.relig.2    1.53673    0.05922      0  25.949   <1e-04 ***
+    nodematch.relig.3    0.88014    0.14990      0   5.872   <1e-04 ***
+    nodematch.relig.4    1.73064    0.08100      0  21.367   <1e-04 ***
     ---
     Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -560,22 +557,22 @@ summary(modelo9)
 
                         Estimate Std. Error MCMC % z value Pr(>|z|)    
     offset(netsize.adj) -7.79811    0.00000      0    -Inf  < 1e-04 ***
-    nodematch.sexo.1     0.43075    0.04472      0   9.633  < 1e-04 ***
-    nodematch.sexo.2     0.14857    0.03228      0   4.602  < 1e-04 ***
-    nodematch.educ.1     0.25613    0.06661      0   3.845  0.00012 ***
-    nodematch.educ.2     0.37488    0.04171      0   8.988  < 1e-04 ***
-    nodematch.educ.3     0.98314    0.07498      0  13.112  < 1e-04 ***
-    nodematch.educ.4     1.64597    0.06523      0  25.233  < 1e-04 ***
-    nodematch.relig.1    0.76542    0.03548      0  21.574  < 1e-04 ***
-    nodematch.relig.2    1.43122    0.06084      0  23.526  < 1e-04 ***
-    nodematch.relig.3    0.88346    0.15039      0   5.874  < 1e-04 ***
-    nodematch.relig.4    1.55015    0.08172      0  18.969  < 1e-04 ***
-    nodematch.ideol.1    1.32334    0.10028      0  13.196  < 1e-04 ***
-    nodematch.ideol.2    0.92788    0.22549      0   4.115  < 1e-04 ***
-    nodematch.ideol.3   -0.13939    0.14182      0  -0.983  0.32569    
-    nodematch.ideol.4    0.26421    0.16369      0   1.614  0.10652    
-    nodematch.ideol.5    1.34040    0.09518      0  14.082  < 1e-04 ***
-    nodematch.ideol.6    0.79616    0.04208      0  18.918  < 1e-04 ***
+    nodematch.sexo.1     0.47684    0.04254      0  11.208  < 1e-04 ***
+    nodematch.sexo.2     0.10682    0.03331      0   3.207 0.001340 ** 
+    nodematch.educ.1     0.17976    0.06846      0   2.626 0.008646 ** 
+    nodematch.educ.2     0.47467    0.04143      0  11.457  < 1e-04 ***
+    nodematch.educ.3     1.00939    0.07554      0  13.363  < 1e-04 ***
+    nodematch.educ.4     1.60532    0.06193      0  25.920  < 1e-04 ***
+    nodematch.relig.1    0.75220    0.03476      0  21.637  < 1e-04 ***
+    nodematch.relig.2    1.52857    0.06395      0  23.903  < 1e-04 ***
+    nodematch.relig.3    0.80285    0.14385      0   5.581  < 1e-04 ***
+    nodematch.relig.4    1.51603    0.08557      0  17.717  < 1e-04 ***
+    nodematch.ideol.1    1.40607    0.10486      0  13.409  < 1e-04 ***
+    nodematch.ideol.2    0.90588    0.22891      0   3.957  < 1e-04 ***
+    nodematch.ideol.3   -0.31396    0.13316      0  -2.358 0.018385 *  
+    nodematch.ideol.4    0.67036    0.17397      0   3.853 0.000116 ***
+    nodematch.ideol.5    1.37281    0.09895      0  13.873  < 1e-04 ***
+    nodematch.ideol.6    0.74416    0.04160      0  17.890  < 1e-04 ***
     ---
     Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -631,24 +628,24 @@ summary(modelo10)
 
                         Estimate Std. Error MCMC % z value Pr(>|z|)    
     offset(netsize.adj) -7.79811    0.00000      0    -Inf  < 1e-04 ***
-    nodematch.sexo.1     0.48639    0.04303      0  11.304  < 1e-04 ***
-    nodematch.sexo.2     0.14117    0.02998      0   4.708  < 1e-04 ***
-    nodematch.educ.1     0.22117    0.06527      0   3.388 0.000703 ***
-    nodematch.educ.2     0.48385    0.04210      0  11.494  < 1e-04 ***
-    nodematch.educ.3     0.99362    0.07746      0  12.828  < 1e-04 ***
-    nodematch.educ.4     1.54289    0.06339      0  24.339  < 1e-04 ***
-    nodematch.relig.1    0.73869    0.03537      0  20.882  < 1e-04 ***
-    nodematch.relig.2    1.66566    0.06864      0  24.266  < 1e-04 ***
-    nodematch.relig.3    0.66895    0.14853      0   4.504  < 1e-04 ***
-    nodematch.relig.4    1.60469    0.08516      0  18.844  < 1e-04 ***
-    nodematch.ideol.1    1.62981    0.09615      0  16.951  < 1e-04 ***
-    nodematch.ideol.2    0.70166    0.22958      0   3.056 0.002241 ** 
-    nodematch.ideol.3   -0.46476    0.13827      0  -3.361 0.000776 ***
-    nodematch.ideol.4    0.41143    0.15408      0   2.670 0.007580 ** 
-    nodematch.ideol.5    1.46219    0.10075      0  14.513  < 1e-04 ***
-    nodematch.ideol.6    0.90205    0.04395      0  20.523  < 1e-04 ***
-    nodematch.barrio.1  -0.21900    0.03515      0  -6.231  < 1e-04 ***
-    nodematch.barrio.2   0.07977    0.04506      0   1.770 0.076674 .  
+    nodematch.sexo.1     0.50069    0.04144      0  12.082  < 1e-04 ***
+    nodematch.sexo.2     0.14210    0.03368      0   4.219  < 1e-04 ***
+    nodematch.educ.1     0.21541    0.06564      0   3.282 0.001031 ** 
+    nodematch.educ.2     0.46568    0.03901      0  11.938  < 1e-04 ***
+    nodematch.educ.3     0.96468    0.07472      0  12.911  < 1e-04 ***
+    nodematch.educ.4     1.67254    0.07020      0  23.827  < 1e-04 ***
+    nodematch.relig.1    0.78634    0.03385      0  23.229  < 1e-04 ***
+    nodematch.relig.2    1.60068    0.06023      0  26.576  < 1e-04 ***
+    nodematch.relig.3    0.91222    0.13699      0   6.659  < 1e-04 ***
+    nodematch.relig.4    1.37110    0.09179      0  14.937  < 1e-04 ***
+    nodematch.ideol.1    1.61493    0.09927      0  16.268  < 1e-04 ***
+    nodematch.ideol.2    0.95378    0.21732      0   4.389  < 1e-04 ***
+    nodematch.ideol.3   -0.47730    0.14075      0  -3.391 0.000696 ***
+    nodematch.ideol.4    0.64203    0.16228      0   3.956  < 1e-04 ***
+    nodematch.ideol.5    1.41057    0.09267      0  15.222  < 1e-04 ***
+    nodematch.ideol.6    0.81756    0.04182      0  19.549  < 1e-04 ***
+    nodematch.barrio.1  -0.20368    0.03509      0  -5.805  < 1e-04 ***
+    nodematch.barrio.2  -0.04030    0.04681      0  -0.861 0.389338    
     ---
     Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -705,25 +702,25 @@ summary(modelo11)
 
                          Estimate Std. Error MCMC % z value Pr(>|z|)    
     offset(netsize.adj) -7.798113   0.000000      0    -Inf  < 1e-04 ***
-    nodematch.sexo.1     0.719082   0.044632      0  16.111  < 1e-04 ***
-    nodematch.sexo.2     0.201656   0.035331      0   5.708  < 1e-04 ***
-    nodematch.educ.1     0.455178   0.063237      0   7.198  < 1e-04 ***
-    nodematch.educ.2     0.496877   0.042349      0  11.733  < 1e-04 ***
-    nodematch.educ.3     0.955235   0.080841      0  11.816  < 1e-04 ***
-    nodematch.educ.4     1.633114   0.068792      0  23.740  < 1e-04 ***
-    nodematch.relig.1    0.936694   0.040772      0  22.974  < 1e-04 ***
-    nodematch.relig.2    1.635200   0.066035      0  24.763  < 1e-04 ***
-    nodematch.relig.3    0.982851   0.143586      0   6.845  < 1e-04 ***
-    nodematch.relig.4    1.713260   0.086886      0  19.719  < 1e-04 ***
-    nodematch.ideol.1    2.086729   0.108407      0  19.249  < 1e-04 ***
-    nodematch.ideol.2    0.830460   0.222977      0   3.724 0.000196 ***
-    nodematch.ideol.3   -0.381333   0.138407      0  -2.755 0.005867 ** 
-    nodematch.ideol.4    0.716717   0.161950      0   4.426  < 1e-04 ***
-    nodematch.ideol.5    1.380423   0.099085      0  13.932  < 1e-04 ***
-    nodematch.ideol.6    0.855199   0.046575      0  18.362  < 1e-04 ***
-    nodematch.barrio.1  -0.170762   0.036677      0  -4.656  < 1e-04 ***
-    nodematch.barrio.2   0.281022   0.047696      0   5.892  < 1e-04 ***
-    absdiff.edad        -0.021904   0.001297      0 -16.889  < 1e-04 ***
+    nodematch.sexo.1     0.604454   0.045362      0  13.325  < 1e-04 ***
+    nodematch.sexo.2     0.326204   0.036893      0   8.842  < 1e-04 ***
+    nodematch.educ.1     0.241201   0.070365      0   3.428 0.000608 ***
+    nodematch.educ.2     0.553463   0.043400      0  12.752  < 1e-04 ***
+    nodematch.educ.3     1.053887   0.077430      0  13.611  < 1e-04 ***
+    nodematch.educ.4     1.706179   0.067742      0  25.187  < 1e-04 ***
+    nodematch.relig.1    0.968363   0.038351      0  25.250  < 1e-04 ***
+    nodematch.relig.2    1.633904   0.060964      0  26.801  < 1e-04 ***
+    nodematch.relig.3    0.943021   0.139523      0   6.759  < 1e-04 ***
+    nodematch.relig.4    1.769135   0.089358      0  19.798  < 1e-04 ***
+    nodematch.ideol.1    1.522419   0.102108      0  14.910  < 1e-04 ***
+    nodematch.ideol.2    1.031124   0.239581      0   4.304  < 1e-04 ***
+    nodematch.ideol.3   -0.073857   0.142029      0  -0.520 0.603054    
+    nodematch.ideol.4    0.584127   0.154353      0   3.784 0.000154 ***
+    nodematch.ideol.5    1.456021   0.095836      0  15.193  < 1e-04 ***
+    nodematch.ideol.6    0.843632   0.043200      0  19.529  < 1e-04 ***
+    nodematch.barrio.1  -0.169993   0.036934      0  -4.603  < 1e-04 ***
+    nodematch.barrio.2   0.132458   0.049392      0   2.682 0.007323 ** 
+    absdiff.edad        -0.023545   0.001331      0 -17.690  < 1e-04 ***
     ---
     Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 

@@ -11,10 +11,7 @@ show_author_byline: true
 draft: false
 
 summary: |
-    Follow me on a journey to build this website. The idea is to have a 
-    system that has the fewest steps as  possible to go from a blog post on 
-    my computer to a website living online. Among other, I discuss about 
-    Quarto, Hugo, Github, and Netlify.
+    In this post I focus on analyzing homophily in a multidimensional way using the `ergm.ego` library, from the `statnet` group. For this I use the data from the Longitudinal Social Study of Chile (ELSOC).
 
 format: hugo
 
