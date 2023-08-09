@@ -80,18 +80,6 @@ other words, a Quarto containing a code chunk with a `read_csv(...)` call in
 it, it will render a document that will show the actual content of the csv I want 
 to open.
 
-If you want to know more about Quarto, and are familiar with rmarkdown, this 
-[blog post](https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/) 
-by Alison Hill is a great introduction!
-
-The output I'm asking Quarto to produce is 
-[markdown](https://en.wikipedia.org/wiki/Markdown), which consists of a text 
-file with minimal formatting (you can put things in _italics_, in **bold**), 
-which is perfect for me because the actual pimping of the website won't 
-happen here. 
-
-The next step is to **turn these markdown files into something pretty**, and
-build a website out of this. 
 
 ## Hugo to Write the Website
 
@@ -122,85 +110,3 @@ directory.
 In a nutshell, all I have to do now is run `hugo server` in a terminal for 
 **Hugo to build my website** and serve it onto a local server. How convenient?
 
-Now, of course, there is a bit of tuning to do so that your website
-actually looks like something. The first thing is to **pick a theme**. 
-
-I had run a website before with Hugo, and decided to ditch my old theme[^2] for 
-a fresh new one. I decided to go with the 
-[Apéro](https://github.com/hugo-apero/hugo-apero) theme because it was pretty, 
-but also because it was used by a looooot of people that inspire me 
-([Julia Silge](https://juliasilge.com/) or 
-[Jesse Mostipiak](https://www.jessemaegan.com/) to name a few). To use the 
-theme, the only thing I had to do is to put its content in a
-`theme/` folder where my website lives[^3]. Once done,  Hugo  requires you to 
-[set up the theme in the config file](https://gohugo.io/getting-started/configuration/#theme) 
-and that's it. **My website was living on my computer**. 
-
-But of course, if the only place where my website lived was my computer, I 
-probably would quickly lose my interest in blogging. 
-
-[^2]: I used to run a website with the Academic theme which was very 
-appropriate given my background. Recent changes in the project, however, added
-a tight integration with a publishing plateform that I didn't plan on using. 
-To be honnest, I would not recommand using this theme now. The integration 
-made the theme almost unusable.
-
-[^3]: Actually, it is a simplification. I 
-[forked](https://github.com/cedricbatailler/hugo-apero/) the original theme 
-in Github so that I could make some minor tweaks, and I used this new repo as a 
-[git subtree](https://www.atlassian.com/git/tutorials/git-subtree) in my 
-project.
-
-## Send Everything Online
-
-{{{< figure src="img/jeremy-bezanger-LUjQCeKE0K0-unsplash.png" caption="Photo by Jeremy Bezanger." >}}}
-
-So far, I have a system that worked perfectly ... on my computer. Because I 
-am not the most functional human being (but who is), it is very likely that
-I will lose all my interest in writing if no one can peer pressure me 
-about it.
-
-To **share my website with the rest of the world**, I am used two tools, and 
-these tools will be the last one I will talk about (for now): 
-[GitHub](https://github.com/) and [Netlify](https://www.netlify.com/).
-
-GitHub is probably one of the websites I used the most on a daily basis. 
-It serves two purposes in my workflow: I use it to **version and host** any 
-piece of software I write. This is a place where my website (or, rather, its 
-source code) exists. Netlify, the other tool, is (self-) described 
-as **a platform that can use what I put on GitHub to serve my website**. In 
-short,  it takes the website's source code, runs the `hugo` command, and 
-serves the results on the whole internet. 
-
-With this setup, any change I make on my computer is then **pushed to 
-GitHub** if I want to, and then **lives on the internet within a few minutes** 
-(if not seconds). 
-
-And that's it, anybody can read what I write!
-
-## Up to Work!
-
-This setup kind of setup is not uncommon, and has the advantage to be very well 
-documented online. The Hugo team 
-[wrote about it](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/), 
-the Netlify 
-[wrote about it](https://docs.netlify.com/integrations/frameworks/hugo/), and 
-if you want to bypass the Hugo step and go straight from Quarto to Netlify, 
-well the Quarto team 
-[wrote about it](https://quarto.org/docs/publishing/netlify.html). Overall, 
-setting up the website was a bit easier than I expected it. Already 
-having a website running with a lot of the same tools sure helped, but I 
-did spend more time looking for a pretty theme than  working on the putting 
-the website online.
-
-Now **the only thing left to do is blogging**. Remember, this was my original 
-motivation? And, if everything goes smoothly, you can expect me to document
-some of my project right here! Fingers crossed. 🤞
-
-:::{.callout-note}
-This blog post was originally written for an audience interested in 
-building their website, but who would not know where to start. 
-Maybe it was your case, maybe it was not. But now that you've read me,
-maybe you want to know more. If that's the case, you should totally have a look 
-at [the actual code that builds this website](https://github.com/cedricbatailler/cedricbatailler.me/).
-:::
