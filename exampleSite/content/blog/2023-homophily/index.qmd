@@ -21,6 +21,29 @@ format: hugo
 freeze: auto
 ---
 
+
+### Librerías
+```{r}
+library(ergm)
+library(ergm.ego)
+library(car)
+library(egor)
+library(tidyverse)
+library(tibble)
+library(texreg)
+library(prioritizr)
+library(questionr)
+```
+
+
+### Data
+```{r}
+load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/data/ELSOC/ELSOC/ELSOC_W02_v3.00_R.RData")
+load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/data/ELSOC/ELSOC/ELSOC_W04_v2.01_R.RData")
+load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/data/ELSOC/ELSOC/ELSOC_W01_v4.01_R.RData")
+```
+
+
 I recently noticed that I probably don't spend as much time writing as I 
 should. *This is the kind of thoughts you can get by doing a
 PhD*. This post is me trying to  address this problem. Let's write more, let's
