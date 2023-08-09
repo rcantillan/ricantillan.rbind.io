@@ -55,7 +55,7 @@ a<-elsoc_2017 %>% dplyr::rename(.egoID = idencuesta)
 ### Crear data frame alteris para 2017=a
 
 Creamos subset con data de cada uno de los alteris mencionados, manteniendo el ID de cada ego en el cual están anidados. Las columnas de cada uno de los subset deben tener los mismos nombres. 
-```{r}
+```{r, warning=FALSE}
 columnas <- c("sexo", "edad", "educ", "relig", "ideol", "barrio", "relacion")
 num_alters <- 5
 
@@ -236,10 +236,10 @@ El paquete "ergm" proporciona no sólo estadísticas resumidas sino también val
 ## Modelo 1
 ```{r, message=FALSE}
 modelo1<-ergm.ego(elsoc_ego~
-                   #nodefactor("sexo") +
-                   #nodefactor("educ") +
-                   #nodefactor("ideol") +
-                   #nodefactor("relig") +
+                    nodefactor("sexo") +
+                    nodefactor("educ") +
+                    nodefactor("ideol") +
+                    nodefactor("relig") +
                     nodematch("sexo", diff=TRUE) +
                     nodematch("educ", diff=TRUE) +
                     nodematch("ideol", diff=TRUE)+
@@ -260,10 +260,15 @@ modelo1<-ergm.ego(elsoc_ego~
                                       MCMC.samplesize = 1000000,
                                       parallel = 16,
                                       SAN.nsteps = 5e7))
-                       
+                      
+```
 
+
+### Summary
+```{r}
 summary(modelo1)
 ```
+
 
 Para interpretar los coeficientes, es útil pensar en términos de la probabilidad de que un par dado de nodos tenga un vínculo, condicionada al estado del nodo entre todos los demás pares. Para el término de homofilia de género (segundo orden) en el modelo anterio: El empate entre dos nodos mujeres, casi cuatriplica las probabilidades (odds) de tener un vínculo en la red observada (por su puesto, manteniendo todo lo demás igual). 
 
@@ -296,7 +301,7 @@ broom::tidy(modelo1, exponentiate = TRUE, conf.int = TRUE, conf.level = 0.99)
 
 ### Predict
 ```{r}
-predict(modelo1, type = "response")
+#predict(modelo1, type = "response")
 ```
 
 
