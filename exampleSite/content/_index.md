@@ -1,9 +1,9 @@
 ---
-title: "Hugo Apéro"
-subtitle: "A Hugo theme you'll want to hang out with"
-description: "Sit down, relax, and get to know Hugo Apéro. Built on top of Blogophonic, we wanted to create a polished Hugo theme with the right features for a true personal website. We set out to create a theme that is a pleasure to learn, and one that helps others get to know you better. It is more than a blog, with flexible custom layouts that help you introduce yourself online."
+title: "Roberto Cantillan C."
+subtitle: "Ph.D. Student in Sociology"
+description: "I am a doctoral student in Sociology at the Pontificia Universidad Católica de Chile and an assistant at the 'Millennium Nucleus for the Study of Labor Market Mismatch' (LM2C2). My doctoral research uses a structural and network perspective to analyze the patterns of mobility, diffusion, and segregation in labor markets from an intragenerational viewpoint."
 images:
-  - img/revoir.jpg
+  - img/originaltheoryor00wrig_0137.jpg
 image_left: true
 text_align_left: false
 show_social_links: true # specify social accounts in site config
