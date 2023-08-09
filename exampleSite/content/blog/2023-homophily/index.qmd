@@ -22,6 +22,25 @@ freeze: auto
 ---
 
 
+## libraries
+```{r}
+library(ergm)
+library(ergm.ego)
+library(car)
+library(egor)
+library(tidyverse)
+library(tibble)
+library(texreg)
+library(prioritizr)
+library(questionr)
+```
+
+## data
+```{r}
+load("/home/rober/Documents/ricantillan.rbind.io/dat/ELSOC/ELSOC_W02_v3.00_R.RData")
+load("/home/rober/Documents/ricantillan.rbind.io/dat/ELSOC/ELSOC_W04_v2.01_R.RData")
+load("/home/rober/Documents/ricantillan.rbind.io/dat/ELSOC/ELSOC_W01_v4.01_R.RData")
+```
 
 
 I recently noticed that I probably don't spend as much time writing as I 
