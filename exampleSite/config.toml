@@ -24,7 +24,7 @@ googleAnalytics = "G-CSC1TRYSDL"
 # HUGO-APERO SETTINGS ---------------------------------------------------------
 [params]
   orgName = "Roberto Cantillan"
-  logo = ""
+  logo = "https://rcantillan.rbind.io/"
 
   mainSections = ["blog", "projects", "pubs"]
   navallcaps = true
@@ -34,7 +34,7 @@ googleAnalytics = "G-CSC1TRYSDL"
   # Place image file in `static` folder and specify image name here.
   sharing_image = "/img/papillons.jpg"
   # Twitter username (without @). Used when a visitor shares your site on Twitter.
-  twitter = "cedricbatailler"
+  twitter = "ricantillan"
 
   # use a built-in color theme
   # one of: forest / grayscale / peach / plum /
