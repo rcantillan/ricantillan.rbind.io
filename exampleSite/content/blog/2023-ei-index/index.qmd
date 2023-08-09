@@ -16,6 +16,9 @@ freeze: auto
 
 ### EI Index
 
+{{{< figure src="img/Fig14_A_600.gif" caption="Homophily" >}}}
+
+
 En el presente documento se realiza un trabajo de datos para construir una base en formato long con la encuesta COES en su ola w2 y ola w4. Adicionalmente, se analizan datos panel con el modelo within-between (Bell & Jhones, 2014; Bell et al. 2019), ideales para el análisis de estructuras jerárquicas de datos, incluidos los datos datos de series de tiempo (de corte transversal), y de tipo panel. 
 
 El objetivo es explorar potenciales relaciones entre indicadores de homofilia y algunos indicadores de comportamiento cívico. El análisis de datos es realizado con el paquete panelr, diseñado para entorno R, el cual tiene como base el paquete lm4. Se prefiere el primero puesto que se reducen sustantivamente procedimientos y lineas de códigos y se obtienen los mismos resultados que si se realizará con el pquete lm4. 
