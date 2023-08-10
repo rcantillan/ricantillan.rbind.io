@@ -105,22 +105,16 @@ googleAnalytics = "G-CSC1TRYSDL"
     icon      = "github" 
     icon_pack = "fab"
     url       = "https://github.com/rcantillan"
-[[params.social]]
-    icon      = "linkedin" 
-    icon_pack = "fab"
-    url       = ""
+
 [[params.social]]
     icon      = "google-scholar" 
     icon_pack = "ai"
-    url       = ""
-[[params.social]]
-    icon = "twitter"
-    icon_pack = "fab"
-    url = ""
+    url       = "https://scholar.google.com/citations?user=xZkAmvAAAAAJ&hl=es"
+
 [[params.social]]
     icon      = "cv" 
     icon_pack = "ai"
-    url       = ""
+    url       = "https://rcantillan.rbind.io/about/CV_rcantillan.pdf"
 
 # PRIVACY CONTENT -------------------------------------------------------------
 # see https://gohugo.io/about/hugo-and-gdpr/
