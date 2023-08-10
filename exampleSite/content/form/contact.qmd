@@ -14,4 +14,3 @@ show_poweredby_formspree: true
 # https://formspree.io/f/abcdefgh The id will be "abcdefgh"" 
 formspree_form_id: ricantillan@uc.cl
 ---
-
