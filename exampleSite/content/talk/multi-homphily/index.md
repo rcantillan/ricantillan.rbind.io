@@ -18,7 +18,7 @@ links:
   icon_pack: fas
   name: Slides
   url: https://rcantillan.github.io/slides/multi-homophily/
-location: Universidad Católica del Maule (Online)
+location: Instituto de Sociología, Pontificia Universidad Católica de Chile
 show_post_time: false
 title: Homofilia Multidimensional y movilidad social en Chile
 ---
@@ -40,10 +40,16 @@ En este trabajo (en desarrollo) realizamos un esfuerzo por entender la formació
 
 Este enfoque de análisis se basa en la arquitectura formal propuesta por Watts y sus colegas en 2002. Al considerar no solo los lazos sociales sino también las identidades individuales, se puede capturar la complejidad de la "proximidad social". En este contexto, es plausible esperar que las redes sociales emergentes presenten altos niveles de segregación. La falta de superposición en los conjuntos de conocidos de individuos de diferentes grupos puede contribuir a la formación de redes altamente distintas y a la delineación de una estructura social específica en Chile.
 
+ 
+ 
+
 <div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
 <iframe src="https://rcantillan.github.io/slides/multi-homophily/" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
+
+ 
+ 
 
 ### Bibliográfia
 
