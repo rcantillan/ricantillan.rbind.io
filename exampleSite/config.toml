@@ -39,7 +39,7 @@ googleAnalytics = "G-CSC1TRYSDL"
   # use a built-in color theme
   # one of: forest / grayscale / peach / plum /
   #         poppy / sky / violet / water
-  theme = "water"
+  theme = "plum"
   
   # or, leave theme empty & make your own palette
   # see docs at https://hugo-apero.netlify.app/learn/color-themes/
