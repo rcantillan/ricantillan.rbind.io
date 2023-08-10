@@ -25,7 +25,7 @@ El transcurso de la era de la información y las transformaciones tecnológicas 
 
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/home/rober/Documents/ricantillan.rbind.io/exampleSite/content/talk/CSS/ciencias-sociales-computacionales/intro/index_css.html", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "https://github.com/rcantillan/slides/blob/main/ciencias-sociales-computacionales/intro/index.html", ratio = "4:3")
 ```
 
 
