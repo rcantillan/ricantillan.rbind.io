@@ -15,8 +15,8 @@ links:
   icon_pack: fab
   name: code
   url: https://github.com/rcantillan/slides/tree/main/ciencias-sociales-computacionales
-- icon: book
-  icon_pack: fab
+- icon: door-open
+  icon_pack: fas
   name: Slides
   url: https://rcantillan.github.io/slides/ciencias-sociales-computacionales/intro/#1
 location: Universidad Católica del Maule (Online)
