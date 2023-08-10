@@ -15,7 +15,7 @@ links:
   icon_pack: fab
   name: code
   url: https://github.com/rcantillan/slides/tree/main/ciencias-sociales-computacionales
-- icon: fa-book
+- icon: book
   icon_pack: fab
   name: Slides
   url: https://rcantillan.github.io/slides/ciencias-sociales-computacionales/intro/#1
