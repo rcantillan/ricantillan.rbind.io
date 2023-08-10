@@ -2,8 +2,8 @@
 author: Cantillan, R.
 categories:
 - talks
-date: "2023-08-02"
-date_end: "2022-08-08"
+date: "2023-08-01"
+date_end: "2023-08-08"
 draft: false
 event: 
 event_url: 
