@@ -27,6 +27,6 @@ title: Investigación social en la era digital
 El transcurso de la era de la información y las transformaciones tecnológicas que la acompañan conllevan oportunidades y retos inéditos para el progreso de la investigación social. Nos encontramos en un momento en el cual podemos observar y analizar el comportamiento humano de formas radicalmente novedosas y prometedoras. El propósito de este ciclo breve de diálogos es acercar a los participantes a estas innovadoras modalidades de investigación y al potencial inherente a las denominadas "ciencias sociales computacionales". Las conversaciones estarán dirigidas hacia las novedosas estrategias de diseño de investigaciones sociales, considerando las nuevas fuentes de información disponibles y la influencia actual de la capacidad computacional.
 
 <div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
-<iframe src="index_css.html" width="400" height="300" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<iframe src="/home/rober/Documents/ricantillan.rbind.io/exampleSite/content/talk/CSS/ciencias-sociales-computacionales/intro/index_css.html" width="400" height="300" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
