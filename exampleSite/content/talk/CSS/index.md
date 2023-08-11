@@ -22,30 +22,42 @@ links:
 location: Universidad Católica del Maule (Online)
 show_post_time: false
 title: Investigación social en la era digital
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 <script src="index_files/libs/fitvids-2.1.1/fitvids.min.js"></script>
 
 
-El transcurso de la era de la información y las transformaciones tecnológicas que la acompañan conllevan oportunidades y retos inéditos para el progreso de la investigación social. Nos encontramos en un momento en el cual podemos observar y analizar el comportamiento humano de formas radicalmente novedosas y prometedoras. El propósito de este ciclo breve de diálogos es acercar a los participantes a estas innovadoras modalidades de investigación y al potencial inherente a las denominadas "ciencias sociales computacionales". Las conversaciones estarán dirigidas hacia las novedosas estrategias de diseño de investigaciones sociales, considerando las nuevas fuentes de información disponibles y la influencia actual de la capacidad computacional. El contenido de la presentación esta basado en el libro "Bit by Bit" de Matthew Salganik.
+El transcurso de la era de la información y las transformaciones
+tecnológicas que la acompañan conllevan oportunidades y retos inéditos
+para el progreso de la investigación social. Nos encontramos en un
+momento en el cual podemos observar y analizar el comportamiento humano
+de formas radicalmente novedosas y prometedoras. El propósito de este
+ciclo breve de diálogos es acercar a los participantes a estas
+innovadoras modalidades de investigación y al potencial inherente a las
+denominadas "ciencias sociales computacionales". Las conversaciones
+estarán dirigidas hacia las novedosas estrategias de diseño de
+investigaciones sociales, considerando las nuevas fuentes de información
+disponibles y la influencia actual de la capacidad computacional. El
+contenido de la presentación esta basado en el libro "Bit by Bit" de
+Matthew Salganik.
 
- 
- 
+   
 
 ### Recursos extras para la profundización.
 
-1.[R para Ciencia de Datos](https://es.r4ds.hadley.nz/) (versión en español) by Hadley Wickham and Garrett Grolemund
- 
-2.[Introduction to Computational Social Science](https://bookdown.org/markhoff/css/) by Mark Hoffman
- 
-3.[Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham
- 
-4.[Bit By Bit](https://www.bitbybitbook.com/) By Matthew Salganik
- 
-5.[Summer Institute for Computational Social Science](https://sicss.io/)
+1.  [R para Ciencia de Datos](https://es.r4ds.hadley.nz/) (versión en
+    español) by Hadley Wickham and Garrett Grolemund
+2.  [Introduction to Computational Social
+    Science](https://bookdown.org/markhoff/css/) by Mark Hoffman  
+3.  [Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham  
+4.  [Bit By Bit](https://www.bitbybitbook.com/) By Matthew Salganik  
+5.  [Summer Institute for Computational Social
+    Science](https://sicss.io/)
 
- 
- 
+   
 
 ### Slides
 
@@ -53,6 +65,3 @@ El transcurso de la era de la información y las transformaciones tecnológicas 
 <iframe src="https://rcantillan.github.io/slides/ciencias-sociales-computacionales/intro/" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
-
- 
- 
