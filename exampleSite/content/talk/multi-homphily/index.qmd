@@ -50,11 +50,11 @@ xaringanExtra::embed_xaringan("https://rcantillan.github.io/slides/multi-homophi
 
 ### Bibliográfia
 
-- Bargsted Valdés, M. A., Espinoza, V., & Plaza, A. (2020). Pautas de Homofilia en Chile. Papers. Revista de Sociologia, 105(4), 583. https://doi.org/10.5565/rev/papers.2617
+- Bargsted Valdés, M. A., Espinoza, V., & Plaza, A. (2020). Pautas de Homofilia en Chile. _Papers. Revista de Sociologia_, 105(4), 583. https://doi.org/10.5565/rev/papers.2617
 
-- Smith, J. A., McPherson, M., & Smith-Lovin, L. (2014). Social Distance in the United States: Sex, Race, Religion, Age, and Education Homophily among Confidants, 1985 to 2004. American Sociological Review, 79(3), 432–456. https://doi.org/10.1177/0003122414531776
+- Smith, J. A., McPherson, M., & Smith-Lovin, L. (2014). Social Distance in the United States: Sex, Race, Religion, Age, and Education Homophily among Confidants, 1985 to 2004. _American Sociological Review_, 79(3), 432–456. https://doi.org/10.1177/0003122414531776
 
-- Watts, D. J., Dodds, P. S., & Newman, M. E. J. (2002). Identity and Search in Social Networks. Science, 296(5571), 1302–1305. https://doi.org/10.1126/science.1070120
+- Watts, D. J., Dodds, P. S., & Newman, M. E. J. (2002). Identity and Search in Social Networks. _Science_, 296(5571), 1302–1305. https://doi.org/10.1126/science.1070120
 
 
 
