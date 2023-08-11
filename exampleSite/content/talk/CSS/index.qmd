@@ -35,11 +35,11 @@ El transcurso de la era de la información y las transformaciones tecnológicas 
 &nbsp;
 [Introduction to Computational Social Science](https://bookdown.org/markhoff/css/) by Mark Hoffman
 &nbsp;
-[Summer Institute for Computational Social Science](https://sicss.io/)
+[Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham
 &nbsp;
 [Bit By Bit](https://www.bitbybitbook.com/) By Matthew Salganik
 &nbsp;
-[Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham
+[Summer Institute for Computational Social Science](https://sicss.io/)
 
 &nbsp;
 &nbsp;
