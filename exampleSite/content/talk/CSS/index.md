@@ -32,14 +32,6 @@ El transcurso de la era de la información y las transformaciones tecnológicas 
  
  
 
-<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
-<iframe src="https://rcantillan.github.io/slides/ciencias-sociales-computacionales/intro/" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
-<script>fitvids('.shareagain', {players: 'iframe'});</script>
-</div>
-
- 
- 
-
 ### Recursos extras para la profundización.
 
 -   [R para Ciencia de Datos](https://es.r4ds.hadley.nz/) (versión en español) by Hadley Wickham and Garrett Grolemund
@@ -47,3 +39,16 @@ El transcurso de la era de la información y las transformaciones tecnológicas 
 -   [Summer Institute for Computational Social Science](https://sicss.io/)
 -   [Bit By Bit](https://www.bitbybitbook.com/) By Matthew Salganik
 -   [Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham
+
+ 
+ 
+
+### Slides
+
+<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
+<iframe src="https://rcantillan.github.io/slides/ciencias-sociales-computacionales/intro/" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>
+
+ 
+ 
