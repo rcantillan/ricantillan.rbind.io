@@ -34,15 +34,15 @@ El transcurso de la era de la información y las transformaciones tecnológicas 
 
 ### Recursos extras para la profundización.
 
-[R para Ciencia de Datos](https://es.r4ds.hadley.nz/) (versión en español) by Hadley Wickham and Garrett Grolemund
+1.[R para Ciencia de Datos](https://es.r4ds.hadley.nz/) (versión en español) by Hadley Wickham and Garrett Grolemund
  
-[Introduction to Computational Social Science](https://bookdown.org/markhoff/css/) by Mark Hoffman
+2.[Introduction to Computational Social Science](https://bookdown.org/markhoff/css/) by Mark Hoffman
  
-[Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham
+3.[Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham
  
-[Bit By Bit](https://www.bitbybitbook.com/) By Matthew Salganik
+4.[Bit By Bit](https://www.bitbybitbook.com/) By Matthew Salganik
  
-[Summer Institute for Computational Social Science](https://sicss.io/)
+5.[Summer Institute for Computational Social Science](https://sicss.io/)
 
  
  
