@@ -40,9 +40,11 @@ xaringanExtra::embed_xaringan("https://rcantillan.github.io/slides/ciencias-soci
 
 ### Recursos extras para la profundización. 
 
-- https://bookdown.org/markhoff/css/
-- https://sicss.io/
-- https://www.bitbybitbook.com/
+- [R para Ciencia de Datos](https://es.r4ds.hadley.nz/) (versión en español) by Hadley Wickham and Garrett Grolemund
+- [Introduction to Computational Social Science](https://bookdown.org/markhoff/css/) by Mark Hoffman
+- [Summer Institute for Computational Social Science](https://sicss.io/)
+- [Bit By Bit](https://www.bitbybitbook.com/) By Matthew Salganik
+- [Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham
 
 
 
