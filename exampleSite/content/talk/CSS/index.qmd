@@ -43,24 +43,21 @@ Matthew Salganik.
 
    
 
-### Recursos extras para la profundización.
-
--   [R para Ciencia de Datos](https://es.r4ds.hadley.nz/) (versión en
-    español) by Hadley Wickham and Garrett Grolemund
--   [Introduction to Computational Social
-    Science](https://bookdown.org/markhoff/css/) by Mark Hoffman  
--   [Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham  
--   [Bit By Bit](https://www.bitbybitbook.com/) By Matthew Salganik  
--   [Summer Institute for Computational Social
-    Science](https://sicss.io/)
-
-   
-
 ### Slides
 
 ```{r echo=FALSE}
 options(htmltools.dir.version = TRUE)
 xaringanExtra::embed_xaringan("https://rcantillan.github.io/slides/ciencias-sociales-computacionales/intro/", ratio = "16:9")
 ```
+
+   
+
+### Recursos para profundización
+
+-   [R para Ciencia de Datos](https://es.r4ds.hadley.nz/) (versión en español) by Hadley Wickham and Garrett Grolemund
+-   [Introduction to Computational Social Science](https://bookdown.org/markhoff/css/) by Mark Hoffman  
+-   [Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham  
+-   [Bit By Bit](https://www.bitbybitbook.com/) By Matthew Salganik  
+-   [Summer Institute for Computational Social Science](https://sicss.io/)
 
    
