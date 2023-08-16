@@ -17,7 +17,7 @@ links:
 - icon: door-open
   icon_pack: fas
   name: Slides
-  url: https://rcantillan.github.io/slides/mobility_class/
+  url: https://rcantillan.github.io/slides/mobility_class/intro/
 location: DEMOSAL, Buenos Aires. 
 show_post_time: false
 title: Clases de movilidad en Chile 2009 - 2020
