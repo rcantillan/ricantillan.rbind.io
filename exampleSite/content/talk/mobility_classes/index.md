@@ -36,7 +36,7 @@ El objetivo es ambicioso: describir la estructura emergente del mercado ocupacio
  
 
 <div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
-<iframe src="https://rcantillan.github.io/slides/mobility_class/intro" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://rcantillan.github.io/slides/mobility_class/intro/" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 

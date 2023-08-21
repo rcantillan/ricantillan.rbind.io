@@ -34,7 +34,7 @@ El objetivo es ambicioso: describir la estructura emergente del mercado ocupacio
 
 ```{r echo=FALSE}
 options(htmltools.dir.version = TRUE)
-xaringanExtra::embed_xaringan("https://rcantillan.github.io/slides/mobility_class/intro", ratio = "16:9")
+xaringanExtra::embed_xaringan("https://rcantillan.github.io/slides/mobility_class/intro/", ratio = "16:9")
 ```
 
 &nbsp;
