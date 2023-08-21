@@ -32,8 +32,6 @@ Esta visión nos permite visualizar el mercado ocupacional como una red direccio
 
 El objetivo es ambicioso: describir la estructura emergente del mercado ocupacional de manera compleja y dinámica, focalizando en las conexiones entre ocupaciones, los desplazamientos de trabajadores y los procesos de contagio entre ocupaciones a lo largo del tiempo en un intervalo de diez años en el contexto chileno.
 
-Además, al examinar la trayectoria de los individuos a través de distintas ocupaciones, se revelarán patrones que arrojarán luz sobre los cambios y las continuidades en la composición de la fuerza laboral en Chile. Esta exploración va más allá de meras estadísticas, abordando los matices y las narrativas que emergen de estas trayectorias profesionales entrelazadas.
-
  
  
 
