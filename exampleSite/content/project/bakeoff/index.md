@@ -1,9 +1,9 @@
 ---
-title: "Bakeoff"
-subtitle: "An R Package"
-excerpt: "This theme has a form-to-email feature built in, thanks to the simple Formspree integration. All you need to activate the form is a valid recipient email address saved in the form front matter."
-date: 2019-07-01
-author: "Eric Anderson"
+title: "Names and social class"
+subtitle: "Dynamics of diffusion and segregation since 1960"
+excerpt: "This project uses data from multiple sources to analyze the dynamics of cultural diffusion between classes, specifically, the diffusion of names."
+date: 2023-07-01
+author: "Roberto Cantillan"
 draft: false
 tags:
   - hugo-site
@@ -16,11 +16,11 @@ links:
 - icon: door-open
   icon_pack: fas
   name: website
-  url: https://bakeoff.netlify.com/
+  url: 
 - icon: github
   icon_pack: fab
   name: code
-  url: https://github.com/apreshill/bakeoff
+  url: https://github.com/rcantillan/diffusion_names
 ---
 
 ![Formspree Logo](formspree-logo.png)
