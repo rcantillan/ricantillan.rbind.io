@@ -1,7 +1,7 @@
 ---
-title: A Project Portfolio To Grow
-description: "Give your projects a place to live online."
-author: "The R Markdown Team @RStudio"
+title: Projects in progress
+description: "Portfolio of my current participation in research projects"
+author: "Roberto Cantillan"
 show_post_thumbnail: true
 show_author_byline: true
 show_post_date: false
