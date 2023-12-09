@@ -27,36 +27,13 @@ links:
 
 ---
 
-### Functional Form
+### Financiamiento
 
-This theme has a **form-to-email** feature built in, thanks to the simple Formspree integration. All you need to activate the form is a valid recipient email address saved in the front matter of the form
-(`/content/forms/contact.md`). Of course, the example shown below (`your@email.here`) must not be used. Please use your actual email address.
+Los investigadores principales de este proyecto son [Mario Molina](https://mariodmolina.com/), [Luca Pesando](https://www.lucamariapesando.com/), ambos de NYU filial Abu Dabi, y [Mauricio Bucca](https://mebucca.github.io/) de la PUC. Yo participo como asistente de investigación y coautor. 
 
-```toml
-# please replace with a valid Formspree form id or email address
-formspree_form_id: your@email.here
-```
+El presente proyecto tiene como objetivo analizar la dinámica de difusión cultural entre clases sociales en Chile, específicamente la difusión de nombres, desde 1960 hasta 2022. Utilizando datos administrativos y censales, así como técnicas de análisis de redes sociales, se busca identificar los patrones de adopción de nombres a través del tiempo entre distintos grupos socioeconómicos en el país. El enfoque cuantitativo y longitudinal permitirá comprender cómo ciertos nombres se difunden desde clases altas a bajas, o viceversa, actuando como marcadores de estatus, movilidad social e identidad cultural. Este conocimiento aportará evidencia empírica para discutir procesos más amplios sobre estratificación, cohesión e integración social en la sociedad chilena contemporánea.
 
-Update that file and you're ready to begin receiving submissions. Just submit
-the active form for the first time, and complete the email address verification
-step with Formspree, and your contact form is live. The next time someone
-fills it out, the submission will land in your inbox.
 
-### Multiple Layouts
 
-The files included with the theme have a contact page ready for copy/paste, or
-you can type `hugo new forms/contact.md` and you're off to the races. There are two
-layouts for `forms` – `split-right`, and `split-left` – you guessed it, one puts
-the form on the right and the other on the left. You just fill out the front
-matter, and the rest is automatic.
 
-```toml
-# layout options: split-right or split-left
-layout: split-right
-```
 
-![Contact Form Split Right Layout Screenshot](built-in-contact-form-screenshot.png)
-
-Both layouts display the page title and description opposite the form, and you
-can also choose to show your social icon links if you have those configured in
-the `config.toml` file.
