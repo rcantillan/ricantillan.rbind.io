@@ -9,6 +9,8 @@ On this page, you will find the results of projects I was involved in and submit
 
 ------------------------------------------------------------------------
 
+## Papers
+
 Garreton, M., Espinoza, V., & Cantillan, R. (2021). Social capital in the urban context: Diversity and social contacts in Chilean cities. *Journal of Urban Affairs*, 0(0), 1--20. <https://doi.org/10.1080/07352166.2021.1974302>
 [<i class="fas fa-file-pdf"></i>](pdf/Social-capital-urban-context.pdf)
 
@@ -17,3 +19,7 @@ Plaza, A., Cantillan, R., Beck, G., & Espinoza, V. (2022). Juntos, pero no revue
 
 Cantillan, R., & Herrera, J. (2020). Centralidad de actores y bloques en las redes organizativas de movilización en el conflicto por el Plan Regulador Comunal de Peñalolén el año 2011. *Revista EURE - Revista de Estudios Urbano Regionales*, 46(138). <http://www.eure.cl/index.php/eure/article/view/3035>
 [<i class="fas fa-file-pdf"></i>](pdf/3035-20945-2-PB.pdf)
+
+## Book chapters
+
+Plaza Reveco, A., Cantillan Carrasco, R., & Muñoz Rojas, B. (2023). Análisis multinivel para el estudio de redes egocéntricas: Aplicaciones en el estudio de la homofilia en Chile1. In "Redes Sociales: Teoría, métodos y aplicaciones en América Latina" (pp. 183--202). *Centro de Investigaciones Sociológicas (CIS)*. [View](https://libreria.cis.es/libros/redes-sociales-teoria-metodos-y-aplicaciones-en-america-latina/9788474769067/)
