@@ -11,6 +11,8 @@ On this page, you will find the results of projects I was involved in and submit
 
 ### Papers
 
+Ahumada, G., Cantillan, R., & Jara, B. (2024). Social capital and individual well-being in the post-disaster period: The case of Hurricane Maria in Puerto Rico. *International Journal of Disaster Risk Reduction*, 103, 104308. <https://doi.org/10.1016/j.ijdrr.2024.104308>[<i class="fas fa-file-pdf"></i>](1-s2.0-S2212420924000700-main.pdf)
+
 Garreton, M., Espinoza, V., & Cantillan, R. (2021). Social capital in the urban context: Diversity and social contacts in Chilean cities. *Journal of Urban Affairs*, 0(0), 1--20. <https://doi.org/10.1080/07352166.2021.1974302>
 [<i class="fas fa-file-pdf"></i>](pdf/Social-capital-urban-context.pdf)
 
