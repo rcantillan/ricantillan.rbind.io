@@ -1,7 +1,7 @@
 ---
 title: "Roberto Cantillan"
-subtitle: "Ph.D. Student in Sociology"
-description: "I am a doctoral student in Sociology at the Pontificia Universidad Católica de Chile and an assistant at the 'Millennium Nucleus for the Study of Labor Market Mismatch' (LM2C2). My doctoral research uses a structural and network perspective to analyze the patterns of mobility, diffusion, and segregation in labor markets from an intragenerational viewpoint."
+subtitle: "Ph.D. (c) in Sociology"
+description: "I am a doctoral candidate in Sociology at the Pontificia Universidad Católica de Chile and an assistant at the 'Millennium Nucleus for the Study of Labor Market Mismatch' (LM2C2). My doctoral research uses a structural and network perspective to analyze the patterns of mobility, diffusion, and segregation in labor markets from an intragenerational viewpoint."
 images:
   - img/originaltheoryor00wrig_0137.jpg
 image_left: false
