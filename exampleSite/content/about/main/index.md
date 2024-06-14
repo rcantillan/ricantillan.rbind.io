@@ -1,6 +1,6 @@
 ---
 ## Configure page content in wide column
-title: "About me...?" # leave blank to exclude
+title: "About me..." # leave blank to exclude
 number_featured: 1 # pulling from mainSections in config.toml
 use_featured: false # if false, use most recent by date
 number_categories: 3 # set to zero to exclude
@@ -15,6 +15,10 @@ intro: |
   Beyond my doctoral research, I have been actively involved in various projects exploring topics such as social capital, associativity, social movements, and the application of network science to a wide range of phenomena. This includes the study of social movements and civic behavior, where network analysis can shed light on the emergence, dynamics, and outcomes of collective action, as well as how social networks shape individuals' engagement in community organizations and political activities. I am also keen on applying network science to study the development and structure of scientific fields, examining how collaboration networks and the diffusion of ideas contribute to knowledge production and innovation. These diverse research interests have strengthened my conviction in the power of interdisciplinary collaboration and the value of applying cutting-edge methodologies to uncover complex social patterns.
   
   My research has been presented at national and international conferences, including the Sunbelt Conference on Social Networks, ISA Forum of Sociology, and the Chilean Sociology Congress. I have also published articles in peer-reviewed journals such as Revista de Sociología (Universidad de Chile) and Journal of Urban Affairs.
+  
+  When I'm not immersed in my research, I enjoy exploring the vibrant cultural scene of Santiago and embarking on outdoor adventures in the beautiful Chilean landscapes.
+  
+  If you would like to learn more about my work or discuss potential collaborations, please feel free to reach out to me at ricantillan@uc.cl. I look forward to connecting with fellow researchers, policymakers, and anyone passionate about understanding and addressing social inequality.
 
 
 show_outro: true
