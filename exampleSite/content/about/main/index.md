@@ -13,6 +13,9 @@ intro: |
   I hold a Master's degree in Social Sciences with a specialization in civil society studies from the Universidad de Santiago de Chile and a Bachelor's degree in Sociology from the Universidad Diego Portales. Throughout my academic journey, I have developed a strong foundation in both qualitative and quantitative research methodologies.
   
   Beyond my doctoral research, I have been actively involved in various projects exploring topics such as social capital, associativity, social movements, and the application of network science to a wide range of phenomena. This includes the study of social movements and civic behavior, where network analysis can shed light on the emergence, dynamics, and outcomes of collective action, as well as how social networks shape individuals' engagement in community organizations and political activities. I am also keen on applying network science to study the development and structure of scientific fields, examining how collaboration networks and the diffusion of ideas contribute to knowledge production and innovation. These diverse research interests have strengthened my conviction in the power of interdisciplinary collaboration and the value of applying cutting-edge methodologies to uncover complex social patterns.
+  
+  My research has been presented at national and international conferences, including the Sunbelt Conference on Social Networks, ISA Forum of Sociology, and the Chilean Sociology Congress. I have also published articles in peer-reviewed journals such as Revista de Sociología (Universidad de Chile) and Journal of Urban Affairs.
+
 
 show_outro: true
 outro: |
