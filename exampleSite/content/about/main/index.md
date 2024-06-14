@@ -9,6 +9,8 @@ intro: |
   I am a doctoral candidate in Sociology at the Pontificia Universidad Católica de Chile and an assistant at the 'Millennium Nucleus for the Study of Labor Market Mismatch' (LM2C2). My research interests lie at the intersection of economic sociology, social stratification, and network science.
   
   Applying a structural and network perspective, I aim to understand the complex dynamics of labor markets and social inequality. My doctoral research focuses on analyzing the patterns of mobility, diffusion, and segregation in labor markets from an intragenerational viewpoint. By leveraging tools such as social network analysis, agent-based modeling, and advanced statistical methods, I seek to uncover the underlying mechanisms that shape individuals' career trajectories and contribute to the reproduction of gender inequalities over time.
+  
+  I hold a Master's degree in Social Sciences with a specialization in civil society studies from the Universidad de Santiago de Chile and a Bachelor's degree in Sociology from the Universidad Diego Portales. Throughout my academic journey, I have developed a strong foundation in both qualitative and quantitative research methodologies.
 
 show_outro: true
 outro: |
