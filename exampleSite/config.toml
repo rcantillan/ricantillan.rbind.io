@@ -65,6 +65,11 @@ googleAnalytics = "G-CSC1TRYSDL"
 
 # NAVBAR ----------------------------------------------------------------------
 [menu]
+[[menu.header]]
+    name = "About"
+    title = "About"
+    url = "/about/"
+    weight = 1
   [[menu.header]]
     name = "Blog"
     title = "Blog"
