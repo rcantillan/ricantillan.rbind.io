@@ -7,7 +7,7 @@ show_social_links: true # specify social accounts in site config
 #audio_link_label: "" # leave blank to exclude
 link_list_label: "Interests" # bookmarks, elsewhere, etc.
 link_list:
-- name: Social Network Analisys
+- name: Social Network Analysis
   url: https://en.wikipedia.org/wiki/Social_network
 - name: Computational Social Science
   url: https://www.bitbybitbook.com/en/1st-ed/preface/
