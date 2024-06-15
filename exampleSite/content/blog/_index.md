@@ -15,7 +15,7 @@ layout: list-sidebar # list, list-sidebar, list-grid
 sidebar: 
   title: Notes & Insights
   description: |
-    "Step into a realm where the quantitative social network analysis is illuminated through the powerful lens of the R language. Here, programming intertwines with abundant data extracted from egocentric and sociocentric networks. Embark on an enlightening journey that delves into topics such as Social Capital, Social Inequalities, and Social Network Analysis—a perspective tailored to unveil the multifaceted layers of societal dynamics. This landscape provides a gateway to a sophisticated comprehension of societal structures and fervently encourages you to share and enhance your insights openly." 
+    "This space combines quantitative social network analysis with the power of the R programming language. Using data from egocentric and sociocentric networks, we explore crucial topics such as social capital, social inequalities, and the underlying dynamics of social structures. Our goal is to provide tools and knowledge that enable a deeper understanding of these phenomena while fostering collaboration and the open exchange of ideas to drive research forward in this exciting field." 
   author: "Roberto Cantillan"
   text_link_label: Subscribe via RSS
   text_link_url: /index.xml
