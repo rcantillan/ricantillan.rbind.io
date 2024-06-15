@@ -4,17 +4,16 @@ date: 2023-08-09
 title: EI Index
 subtitle: Homophily
 author: Roberto Cantillan
-
 show_post_date: true
 show_author_byline: true
-
 draft: false
 
 summary: |
     En el presente documento se realiza un trabajo de datos para construir una base en formato long con la encuesta COES en su ola w2 y ola w4. Adicionalmente, se analizan datos panel con el modelo within-between (Bell & Jhones, 2014; Bell et al. 2019), ideales para el análisis de estructuras jerárquicas de datos, incluidos los datos datos de series de tiempo (de corte transversal), y de tipo panel. 
 
 format: hugo
-
+html:
+    html-math-method: mathjax
 freeze: auto
 ---
 
@@ -24,9 +23,7 @@ El objetivo es explorar potenciales relaciones entre indicadores de homofilia y 
 
 Para atributos categóricos de los alter de la red ego, además de la proporción de alter similares a ego, una medida generalmente usada ha sido el índice EI (Krackhardt & Stern, 1988, Perry et al., 2018). Esta medida se define como el número de alter diferentes de ego (lazos externos E) menos el número de alter iguales a ego (lazos internos I), dividido por el número de alter. Esta es una medida "reversa" de homofilia toa vez que una medida alta de este índice índica mayor heterofilia. Además, debido a que es una transformación lineal de la medida de proporción de lazos homofilicos, su correlación es un perfecto -.1
 
-``` math
-EI = \frac{E - I}{E + I}
-```
+\[EI = \]
 
 A continuación, desarrollamos el trabajo de código. Todo el análisis es realizado con datos de la encuesta ELSOC COES, considerando las olas 2 y 4. Las bases de datos y la documentación pueden ser descargadas desde el siguiente [link](https://dataverse.harvard.edu/dataverse/coes_data_repository)
 
@@ -315,7 +312,7 @@ hom_tam%>%
   theme_light()
 ```
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-12-1.png" width="768" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-11-1.png" width="768" />
 
 ### Homofilia por posición política
 
@@ -361,7 +358,7 @@ ggplot(aes(x=ego, y=Freq, fill=alter),  weight = ponderador01) +
     theme_light()
 ```
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-13-1.png" width="768" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-12-1.png" width="768" />
 
 ### Cálculo E-I homofilia por posición política (ELSOC 2017)
 
@@ -554,7 +551,7 @@ ggplot(data = ego2017) +
   theme_light()
 ```
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-19-1.png" width="768" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-18-1.png" width="768" />
 
 ### Bibliografía
 
