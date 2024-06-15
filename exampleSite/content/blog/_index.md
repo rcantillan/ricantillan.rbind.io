@@ -22,7 +22,7 @@ sidebar:
   categories_link: true
   series_link: true
   tags_link: true
-  show_sidebar_adunit: true # show ad container
+  #show_sidebar_adunit: true # show ad container
 
 # set up common front matter for all pages inside blog/
 cascade:
