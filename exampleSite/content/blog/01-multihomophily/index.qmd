@@ -25,9 +25,7 @@ El objetivo es explorar potenciales relaciones entre indicadores de homofilia y 
 
 Para atributos categóricos de los alter de la red ego, además de la proporción de alter similares a ego, una medida generalmente usada ha sido el índice EI (Krackhardt & Stern, 1988, Perry et al., 2018). Esta medida se define como el número de alter diferentes de ego (lazos externos E) menos el número de alter iguales a ego (lazos internos I), dividido por el número de alter. Esta es una medida “reversa” de homofilia toa vez que una medida alta de este índice índica mayor heterofilia. Además, debido a que es una transformación lineal de la medida de proporción de lazos homofilicos, su correlación es un perfecto -.1
 
-$$ 
-EI = \frac{E - I}{E + I}
-$$
+$$EI = \frac{E - I}{E + I}$$
 
 
 A continuación, desarrollamos el trabajo de código. Todo el análisis es realizado con datos de la encuesta ELSOC COES, considerando las olas 2 y 4. Las bases de datos y la documentación pueden ser descargadas desde el siguiente [link](https://dataverse.harvard.edu/dataverse/coes_data_repository) 
