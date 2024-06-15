@@ -7,12 +7,12 @@ show_social_links: true # specify social accounts in site config
 #audio_link_label: "" # leave blank to exclude
 link_list_label: "Interests" # bookmarks, elsewhere, etc.
 link_list:
-- name: Paris
-  url: https://en.wikipedia.org/wiki/Paris
-- name: Pastries
-  url: https://en.wikipedia.org/wiki/Pastry
-- name: People
-  url: https://en.wikipedia.org/wiki/People
+- name: Social Network Analisys
+  url: https://en.wikipedia.org/wiki/Social_network
+- name: Computational Social Science
+  url: https://www.bitbybitbook.com/en/1st-ed/preface/
+- name: Statification studies
+  url: https://en.wikipedia.org/wiki/Social_stratification
 ---
 
 ** index doesn't contain a body, just front matter above.
