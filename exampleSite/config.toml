@@ -75,11 +75,11 @@ googleAnalytics = "G-CSC1TRYSDL"
     title = "Blog"
     url = "/blog/"
     weight = 1
-  [[menu.header]]
-    name = "Projects"
-    title = "Porjects"
-    url = "/project/"
-    weight = 1
+  #[[menu.header]]
+  #  name = "Projects"
+  #  title = "Porjects"
+  #  url = "/project/"
+  #  weight = 1
   [[menu.header]]
     name = "Publications"
     title = "Publications"
