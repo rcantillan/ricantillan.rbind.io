@@ -18,10 +18,10 @@ intro: |
   
   When I'm not immersed in my research, I enjoy exploring the vibrant cultural scene of Santiago and embarking on outdoor adventures in the beautiful Chilean landscapes.
   
-  If you would like to learn more about my work or discuss potential collaborations, please feel free to reach out to me at ricantillan@uc.cl. I look forward to connecting with fellow researchers, policymakers, and anyone passionate about understanding and addressing social inequality.
+  If you would like to learn more about my work or discuss potential collaborations, please feel free to reach out to me at ricantillan@uc.cl. 
 
 
-show_outro: false
+show_outro: true
 outro: |
   <i class="fas fa-glass-cheers pr2"></i>Sincere thanks to [Maëlle Salmon](https://masalmon.eu/) for her help naming this Hugo theme!
   
