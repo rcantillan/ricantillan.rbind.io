@@ -21,7 +21,7 @@ intro: |
   If you would like to learn more about my work or discuss potential collaborations, please feel free to reach out to me at ricantillan@uc.cl. 
 
 
-show_outro: true
+show_outro: false
 outro: |
   <i class="fas fa-glass-cheers pr2"></i>Sincere thanks to [Maëlle Salmon](https://masalmon.eu/) for her help naming this Hugo theme!
   
