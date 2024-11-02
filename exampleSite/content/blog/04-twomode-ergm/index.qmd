@@ -9,18 +9,7 @@ draft: false
 summary: |
     En este análisis examinamos la estructura de colaboración científica en Latinoamérica mediante un ERGM bipartito sobre una red de 45,724 conexiones autor-artículo. Los resultados revelan una baja densidad base compensada por una fuerte tendencia a formar equipos de tamaño medio. Destaca especialmente cómo la disrupción científica se asocia positivamente con la formación de vínculos, Los resultados sugieren que mientras las ciencias sociales y humanidades (SHAPE) tienden a colaborar dentro de su campo, las ciencias STEM muestran patrones más abiertos de colaboración interdisciplinaria. Esto podría reflejar diferencias en las prácticas de investigación: SHAPE con tradiciones más especializadas vs. STEM con mayor apertura a cruces disciplinares.
 
-format: 
-  html:
-    theme:
-      light:
-        - cosmo
-        
-      dark: 
-        - cosmo
-
-    code-link: true
-    pagetitle: "{{< meta title >}}"
-    lightbox: true
+format: hugo
 execute: 
   freeze: auto
 ---
