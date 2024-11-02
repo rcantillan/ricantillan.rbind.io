@@ -1,0 +1,14 @@
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    page-layout: article
+    code-tools: true
+
+website:
+  page-navigation: true
+  sidebar:
+    style: "docked"
+    search: true
+    collapse-level: 1

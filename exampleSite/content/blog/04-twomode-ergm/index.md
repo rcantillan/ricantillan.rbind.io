@@ -1,6 +1,6 @@
 ---
 date: 2024-11-01
-title: Disrupción y Estructura en redes de producción cietífica 
+title: Disrupción y Estructura en redes de producción científica 
 subtitle:  Un Análisis ERGM Modo-2 al campo de la Ciencia de la Sustentabilidad
 author: Roberto Cantillan
 show_post_date: true
@@ -599,33 +599,33 @@ summary(model_final)
 
     Monte Carlo Maximum Likelihood Results:
 
-                                        Estimate Std. Error MCMC % z value Pr(>|z|)
-    edges                               -9.37051    0.18453      0 -50.779   <1e-04
-    gwb1deg.fixed.0.25                   0.71824    0.61640      0   1.165    0.244
-    gwb2deg.fixed.0.25                   8.37515    0.71530      0  11.709   <1e-04
-    b1cov.disruption                     0.30111    0.02755      0  10.931   <1e-04
-    b2cov.productivity                  -0.15535    0.02002      4  -7.761   <1e-04
-    b1factor.field_broad.STEM            0.77267    0.15971      0   4.838   <1e-04
-    b1nodematch.field_broad.SHAPE        1.23183    0.00444      0 277.418   <1e-04
-    b1nodematch.field_broad.STEM         0.11693    0.38119      0   0.307    0.759
-    b1cov.disruption:b2cov.productivity  0.01669    0.02677      0   0.624    0.533
-                                           
-    edges                               ***
-    gwb1deg.fixed.0.25                     
-    gwb2deg.fixed.0.25                  ***
-    b1cov.disruption                    ***
-    b2cov.productivity                  ***
-    b1factor.field_broad.STEM           ***
-    b1nodematch.field_broad.SHAPE       ***
-    b1nodematch.field_broad.STEM           
-    b1cov.disruption:b2cov.productivity    
+                                         Estimate Std. Error MCMC % z value
+    edges                               -9.564227   0.176208      2 -54.278
+    gwb1deg.fixed.0.25                   0.389781   0.602458      0   0.647
+    gwb2deg.fixed.0.25                   8.920761   0.698634      0  12.769
+    b1cov.disruption                     0.257814   0.032611      0   7.906
+    b2cov.productivity                   0.146963   0.076537      2   1.920
+    b1factor.field_broad.STEM            0.760699   0.167004      0   4.555
+    b1nodematch.field_broad.SHAPE        1.270196   0.004343      2 292.492
+    b1nodematch.field_broad.STEM         0.386417   0.375294      0   1.030
+    b1cov.disruption:b2cov.productivity -0.000226   0.027135      0  -0.008
+                                        Pr(>|z|)    
+    edges                                 <1e-04 ***
+    gwb1deg.fixed.0.25                    0.5176    
+    gwb2deg.fixed.0.25                    <1e-04 ***
+    b1cov.disruption                      <1e-04 ***
+    b2cov.productivity                    0.0548 .  
+    b1factor.field_broad.STEM             <1e-04 ***
+    b1nodematch.field_broad.SHAPE         <1e-04 ***
+    b1nodematch.field_broad.STEM          0.3032    
+    b1cov.disruption:b2cov.productivity   0.9934    
     ---
     Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
          Null Deviance: 63387  on 45724  degrees of freedom
-     Residual Deviance: 33006  on 45715  degrees of freedom
+     Residual Deviance:  5959  on 45715  degrees of freedom
      
-    AIC: 33024  BIC: 33103  (Smaller is better. MC Std. Err. = 389.6)
+    AIC: 5977  BIC: 6056  (Smaller is better. MC Std. Err. = 1073)
 
 ### Diagnósticos del Modelo
 
@@ -658,190 +658,180 @@ mcmc.diagnostics(model_final)
 
     Sample statistics summary:
 
-    Iterations = 11200000:29862400
-    Thinning interval = 12800 
+    Iterations = 560640:1920000
+    Thinning interval = 1536 
     Number of chains = 2 
-    Sample size per chain = 1459 
+    Sample size per chain = 886 
 
     1. Empirical mean and standard deviation for each variable,
        plus standard error of the mean:
 
-                                              Mean        SD  Naive SE
-    edges                                1.652e+03   340.787   6.30870
-    gwb1deg.fixed.0.25                   1.510e+01     1.814   0.03359
-    gwb2deg.fixed.0.25                   4.567e+00     2.097   0.03882
-    b1cov.disruption                     2.471e+02    39.428   0.72989
-    b2cov.productivity                  -1.280e+03   161.599   2.99156
-    b1factor.field_broad.STEM            8.980e+00     8.536   0.15801
-    b1nodematch.field_broad.SHAPE        6.779e+04 13999.576 259.16254
-    b1nodematch.field_broad.STEM        -5.141e-03     3.304   0.06117
-    b1cov.disruption:b2cov.productivity  2.887e+01    40.970   0.75844
-                                        Time-series SE
-    edges                                    1.101e+02
-    gwb1deg.fixed.0.25                       4.431e-02
-    gwb2deg.fixed.0.25                       1.733e-01
-    b1cov.disruption                         1.594e+00
-    b2cov.productivity                       7.593e+01
-    b1factor.field_broad.STEM                3.658e-01
-    b1nodematch.field_broad.SHAPE            4.702e+03
-    b1nodematch.field_broad.STEM             6.263e-02
-    b1cov.disruption:b2cov.productivity      1.646e+00
+                                             Mean       SD Naive SE Time-series SE
+    edges                                 364.467  102.314  2.43054       23.52507
+    gwb1deg.fixed.0.25                     15.229    1.920  0.04561        0.10525
+    gwb2deg.fixed.0.25                      0.707    1.748  0.04153        0.04436
+    b1cov.disruption                      195.126   35.349  0.83973        3.04340
+    b2cov.productivity                   -262.107   25.726  0.61115        8.18442
+    b1factor.field_broad.STEM              20.310    8.908  0.21161        0.80879
+    b1nodematch.field_broad.SHAPE       14876.910 4129.105 98.08985      987.49465
+    b1nodematch.field_broad.STEM            2.152    3.705  0.08801        0.09876
+    b1cov.disruption:b2cov.productivity     5.470   42.286  1.00453        4.29263
 
     2. Quantiles for each variable:
 
-                                              2.5%       25%      50%      75%
-    edges                                 886.9250  1381.000  1694.00  1939.00
-    gwb1deg.fixed.0.25                     11.2405    13.952    15.23    16.39
-    gwb2deg.fixed.0.25                      0.2343     3.196     4.66     5.99
-    b1cov.disruption                      172.5766   220.545   246.45   272.68
-    b2cov.productivity                  -1759.4792 -1392.241 -1239.33 -1173.21
-    b1factor.field_broad.STEM              -8.0000     3.000     9.00    15.00
-    b1nodematch.field_broad.SHAPE       36520.0000 56454.000 69728.00 79694.00
-    b1nodematch.field_broad.STEM           -6.0000    -2.000     0.00     2.00
-    b1cov.disruption:b2cov.productivity   -51.0531     1.866    28.60    55.97
+                                            2.5%      25%        50%       75%
+    edges                                234.000  247.000   357.5000   477.000
+    gwb1deg.fixed.0.25                    11.187   14.023    15.3675    16.530
+    gwb2deg.fixed.0.25                    -2.736   -0.434     0.7522     1.907
+    b1cov.disruption                     121.526  173.367   194.9877   218.828
+    b2cov.productivity                  -340.714 -277.423  -259.8022  -246.395
+    b1factor.field_broad.STEM              4.000   14.000    20.0000    26.000
+    b1nodematch.field_broad.SHAPE       9950.000 9957.000 14283.5000 19679.000
+    b1nodematch.field_broad.STEM          -4.000    0.000     2.0000     5.000
+    b1cov.disruption:b2cov.productivity  -74.498  -24.316     5.7627    36.692
                                             97.5%
-    edges                                2261.000
-    gwb1deg.fixed.0.25                     18.186
-    gwb2deg.fixed.0.25                      8.441
-    b1cov.disruption                      325.879
-    b2cov.productivity                  -1027.435
-    b1factor.field_broad.STEM              26.000
-    b1nodematch.field_broad.SHAPE       92977.000
-    b1nodematch.field_broad.STEM            7.000
-    b1cov.disruption:b2cov.productivity   112.311
+    edges                                 524.725
+    gwb1deg.fixed.0.25                     18.671
+    gwb2deg.fixed.0.25                      3.892
+    b1cov.disruption                      264.448
+    b2cov.productivity                   -223.175
+    b1factor.field_broad.STEM              39.000
+    b1nodematch.field_broad.SHAPE       20924.075
+    b1nodematch.field_broad.STEM           10.000
+    b1cov.disruption:b2cov.productivity    86.183
 
 
     Sample statistics cross-correlations:
                                                edges gwb1deg.fixed.0.25
-    edges                                1.000000000        -0.09625624
-    gwb1deg.fixed.0.25                  -0.096256240         1.00000000
-    gwb2deg.fixed.0.25                   0.512767970         0.02688461
-    b1cov.disruption                    -0.116935017        -0.24663624
-    b2cov.productivity                  -0.723178242         0.05499976
-    b1factor.field_broad.STEM           -0.335474263         0.44350921
-    b1nodematch.field_broad.SHAPE        0.999728246        -0.09741348
-    b1nodematch.field_broad.STEM        -0.029769552         0.19518470
-    b1cov.disruption:b2cov.productivity  0.007290014        -0.01924899
+    edges                                1.000000000        -0.03056469
+    gwb1deg.fixed.0.25                  -0.030564689         1.00000000
+    gwb2deg.fixed.0.25                   0.257704471         0.11486773
+    b1cov.disruption                     0.076729240        -0.23838302
+    b2cov.productivity                  -0.608304174         0.11820260
+    b1factor.field_broad.STEM           -0.127461532         0.39768561
+    b1nodematch.field_broad.SHAPE        0.996930023        -0.03728510
+    b1nodematch.field_broad.STEM         0.003854208         0.20808605
+    b1cov.disruption:b2cov.productivity  0.192881179         0.09023908
                                         gwb2deg.fixed.0.25 b1cov.disruption
-    edges                                       0.51276797     -0.116935017
-    gwb1deg.fixed.0.25                          0.02688461     -0.246636240
-    gwb2deg.fixed.0.25                          1.00000000      0.033716195
-    b1cov.disruption                            0.03371620      1.000000000
-    b2cov.productivity                         -0.33297931      0.115009227
-    b1factor.field_broad.STEM                   0.02609877      0.069363639
-    b1nodematch.field_broad.SHAPE               0.50174162     -0.119301879
-    b1nodematch.field_broad.STEM                0.28657107      0.086950035
-    b1cov.disruption:b2cov.productivity        -0.00806881      0.001270967
+    edges                                       0.25770447       0.07672924
+    gwb1deg.fixed.0.25                          0.11486773      -0.23838302
+    gwb2deg.fixed.0.25                          1.00000000       0.06452758
+    b1cov.disruption                            0.06452758       1.00000000
+    b2cov.productivity                         -0.13928634      -0.02153298
+    b1factor.field_broad.STEM                   0.24144061      -0.03772082
+    b1nodematch.field_broad.SHAPE               0.21572833       0.06935172
+    b1nodematch.field_broad.STEM                0.42302832       0.06473406
+    b1cov.disruption:b2cov.productivity         0.05702676      -0.05297556
                                         b2cov.productivity
-    edges                                     -0.723178242
-    gwb1deg.fixed.0.25                         0.054999760
-    gwb2deg.fixed.0.25                        -0.332979307
-    b1cov.disruption                           0.115009227
-    b2cov.productivity                         1.000000000
-    b1factor.field_broad.STEM                  0.229645479
-    b1nodematch.field_broad.SHAPE             -0.721665849
-    b1nodematch.field_broad.STEM               0.022363052
-    b1cov.disruption:b2cov.productivity       -0.004456793
+    edges                                      -0.60830417
+    gwb1deg.fixed.0.25                          0.11820260
+    gwb2deg.fixed.0.25                         -0.13928634
+    b1cov.disruption                           -0.02153298
+    b2cov.productivity                          1.00000000
+    b1factor.field_broad.STEM                   0.21876441
+    b1nodematch.field_broad.SHAPE              -0.60356129
+    b1nodematch.field_broad.STEM                0.06360949
+    b1cov.disruption:b2cov.productivity        -0.05419728
                                         b1factor.field_broad.STEM
-    edges                                             -0.33547426
-    gwb1deg.fixed.0.25                                 0.44350921
-    gwb2deg.fixed.0.25                                 0.02609877
-    b1cov.disruption                                   0.06936364
-    b2cov.productivity                                 0.22964548
+    edges                                             -0.12746153
+    gwb1deg.fixed.0.25                                 0.39768561
+    gwb2deg.fixed.0.25                                 0.24144061
+    b1cov.disruption                                  -0.03772082
+    b2cov.productivity                                 0.21876441
     b1factor.field_broad.STEM                          1.00000000
-    b1nodematch.field_broad.SHAPE                     -0.34031908
-    b1nodematch.field_broad.STEM                       0.44722798
-    b1cov.disruption:b2cov.productivity               -0.01482200
+    b1nodematch.field_broad.SHAPE                     -0.14693694
+    b1nodematch.field_broad.STEM                       0.53116846
+    b1cov.disruption:b2cov.productivity                0.05381550
                                         b1nodematch.field_broad.SHAPE
-    edges                                                 0.999728246
-    gwb1deg.fixed.0.25                                   -0.097413482
-    gwb2deg.fixed.0.25                                    0.501741625
-    b1cov.disruption                                     -0.119301879
-    b2cov.productivity                                   -0.721665849
-    b1factor.field_broad.STEM                            -0.340319077
-    b1nodematch.field_broad.SHAPE                         1.000000000
-    b1nodematch.field_broad.STEM                         -0.039207981
-    b1cov.disruption:b2cov.productivity                   0.008806979
+    edges                                                  0.99693002
+    gwb1deg.fixed.0.25                                    -0.03728510
+    gwb2deg.fixed.0.25                                     0.21572833
+    b1cov.disruption                                       0.06935172
+    b2cov.productivity                                    -0.60356129
+    b1factor.field_broad.STEM                             -0.14693694
+    b1nodematch.field_broad.SHAPE                          1.00000000
+    b1nodematch.field_broad.STEM                          -0.02948580
+    b1cov.disruption:b2cov.productivity                    0.19958098
                                         b1nodematch.field_broad.STEM
-    edges                                               -0.029769552
-    gwb1deg.fixed.0.25                                   0.195184696
-    gwb2deg.fixed.0.25                                   0.286571072
-    b1cov.disruption                                     0.086950035
-    b2cov.productivity                                   0.022363052
-    b1factor.field_broad.STEM                            0.447227984
-    b1nodematch.field_broad.SHAPE                       -0.039207981
+    edges                                                0.003854208
+    gwb1deg.fixed.0.25                                   0.208086046
+    gwb2deg.fixed.0.25                                   0.423028322
+    b1cov.disruption                                     0.064734064
+    b2cov.productivity                                   0.063609491
+    b1factor.field_broad.STEM                            0.531168462
+    b1nodematch.field_broad.SHAPE                       -0.029485804
     b1nodematch.field_broad.STEM                         1.000000000
-    b1cov.disruption:b2cov.productivity                 -0.003964654
+    b1cov.disruption:b2cov.productivity                 -0.002099593
                                         b1cov.disruption:b2cov.productivity
-    edges                                                       0.007290014
-    gwb1deg.fixed.0.25                                         -0.019248991
-    gwb2deg.fixed.0.25                                         -0.008068810
-    b1cov.disruption                                            0.001270967
-    b2cov.productivity                                         -0.004456793
-    b1factor.field_broad.STEM                                  -0.014822001
-    b1nodematch.field_broad.SHAPE                               0.008806979
-    b1nodematch.field_broad.STEM                               -0.003964654
+    edges                                                       0.192881179
+    gwb1deg.fixed.0.25                                          0.090239078
+    gwb2deg.fixed.0.25                                          0.057026756
+    b1cov.disruption                                           -0.052975564
+    b2cov.productivity                                         -0.054197280
+    b1factor.field_broad.STEM                                   0.053815501
+    b1nodematch.field_broad.SHAPE                               0.199580975
+    b1nodematch.field_broad.STEM                               -0.002099593
     b1cov.disruption:b2cov.productivity                         1.000000000
 
     Sample statistics auto-correlation:
     Chain 1 
-                  edges gwb1deg.fixed.0.25 gwb2deg.fixed.0.25 b1cov.disruption
-    Lag 0     1.0000000        1.000000000         1.00000000        1.0000000
-    Lag 12800 0.9967483        0.256153178         0.09914783        0.6615114
-    Lag 25600 0.9940728        0.114144671         0.10320623        0.4612434
-    Lag 38400 0.9912548        0.061179522         0.13586402        0.3285507
-    Lag 51200 0.9885181        0.025665390         0.09664041        0.2232731
-    Lag 64000 0.9856870       -0.008855416         0.09472668        0.1532041
-              b2cov.productivity b1factor.field_broad.STEM
-    Lag 0              1.0000000                1.00000000
-    Lag 12800          0.9956970                0.51869151
-    Lag 25600          0.9938628                0.32208296
-    Lag 38400          0.9917796                0.22747766
-    Lag 51200          0.9896575                0.12743586
-    Lag 64000          0.9874340                0.08759915
-              b1nodematch.field_broad.SHAPE b1nodematch.field_broad.STEM
-    Lag 0                         1.0000000                  1.000000000
-    Lag 12800                     0.9974084                  0.009158786
-    Lag 25600                     0.9947741                  0.003142924
-    Lag 38400                     0.9920964                  0.037217663
-    Lag 51200                     0.9893800                  0.007565375
-    Lag 64000                     0.9866240                 -0.003154709
-              b1cov.disruption:b2cov.productivity
-    Lag 0                               1.0000000
-    Lag 12800                           0.6829315
-    Lag 25600                           0.4813833
-    Lag 38400                           0.3367496
-    Lag 51200                           0.2282281
-    Lag 64000                           0.1513139
+                 edges gwb1deg.fixed.0.25 gwb2deg.fixed.0.25 b1cov.disruption
+    Lag 0    1.0000000          1.0000000        1.000000000        1.0000000
+    Lag 1536 0.9796229          0.5054723        0.089848483        0.8201639
+    Lag 3072 0.9761313          0.3310347        0.031869531        0.6810625
+    Lag 4608 0.9737896          0.2596679        0.011906811        0.5722183
+    Lag 6144 0.9718340          0.1527362       -0.008017207        0.4834506
+    Lag 7680 0.9699836          0.1046037       -0.027491476        0.4008253
+             b2cov.productivity b1factor.field_broad.STEM
+    Lag 0             1.0000000                 1.0000000
+    Lag 1536          0.8808788                 0.7619703
+    Lag 3072          0.8726996                 0.6849942
+    Lag 4608          0.8664243                 0.6273049
+    Lag 6144          0.8677945                 0.5460641
+    Lag 7680          0.8641409                 0.4940306
+             b1nodematch.field_broad.SHAPE b1nodematch.field_broad.STEM
+    Lag 0                        1.0000000                   1.00000000
+    Lag 1536                     0.9981448                   0.06467011
+    Lag 3072                     0.9962650                  -0.01271424
+    Lag 4608                     0.9943568                   0.05346738
+    Lag 6144                     0.9924154                  -0.01375120
+    Lag 7680                     0.9904378                  -0.03611975
+             b1cov.disruption:b2cov.productivity
+    Lag 0                              1.0000000
+    Lag 1536                           0.8686170
+    Lag 3072                           0.7758649
+    Lag 4608                           0.7003982
+    Lag 6144                           0.6154199
+    Lag 7680                           0.5423295
     Chain 2 
-                  edges gwb1deg.fixed.0.25 gwb2deg.fixed.0.25 b1cov.disruption
-    Lag 0     1.0000000         1.00000000          1.0000000       1.00000000
-    Lag 12800 0.9959821         0.17531748          0.1476151       0.57430156
-    Lag 25600 0.9922139         0.09448727          0.1507695       0.33697018
-    Lag 38400 0.9884012         0.04218387          0.1725407       0.23378916
-    Lag 51200 0.9845113         0.04687383          0.1869327       0.13729212
-    Lag 64000 0.9805936         0.04880867          0.1795038       0.08160798
-              b2cov.productivity b1factor.field_broad.STEM
-    Lag 0              1.0000000                 1.0000000
-    Lag 12800          0.9959606                 0.5074450
-    Lag 25600          0.9925025                 0.3321632
-    Lag 38400          0.9889132                 0.2294058
-    Lag 51200          0.9852507                 0.1880366
-    Lag 64000          0.9814834                 0.1683896
-              b1nodematch.field_broad.SHAPE b1nodematch.field_broad.STEM
-    Lag 0                         1.0000000                  1.000000000
-    Lag 12800                     0.9963619                  0.045568046
-    Lag 25600                     0.9926791                  0.001904052
-    Lag 38400                     0.9889876                  0.037956168
-    Lag 51200                     0.9852687                 -0.025409821
-    Lag 64000                     0.9815361                 -0.010103611
-              b1cov.disruption:b2cov.productivity
-    Lag 0                               1.0000000
-    Lag 12800                           0.6077913
-    Lag 25600                           0.3823527
-    Lag 38400                           0.2471092
-    Lag 51200                           0.1507712
-    Lag 64000                           0.1201131
+                 edges gwb1deg.fixed.0.25 gwb2deg.fixed.0.25 b1cov.disruption
+    Lag 0    1.0000000          1.0000000       1.0000000000        1.0000000
+    Lag 1536 0.9819993          0.5787583       0.0850912995        0.8419070
+    Lag 3072 0.9763562          0.3853597      -0.0012170525        0.7406205
+    Lag 4608 0.9706455          0.2943331      -0.0136599334        0.6631171
+    Lag 6144 0.9666640          0.1945169       0.0002690991        0.5855977
+    Lag 7680 0.9633229          0.1092344       0.0580169633        0.5160718
+             b2cov.productivity b1factor.field_broad.STEM
+    Lag 0             1.0000000                 1.0000000
+    Lag 1536          0.9567301                 0.7426022
+    Lag 3072          0.9469336                 0.6563559
+    Lag 4608          0.9353246                 0.5845759
+    Lag 6144          0.9289989                 0.5224311
+    Lag 7680          0.9221825                 0.4866730
+             b1nodematch.field_broad.SHAPE b1nodematch.field_broad.STEM
+    Lag 0                        1.0000000                  1.000000000
+    Lag 1536                     0.9956293                  0.158274787
+    Lag 3072                     0.9912203                  0.068980612
+    Lag 4608                     0.9867588                  0.017370641
+    Lag 6144                     0.9824236                 -0.006160595
+    Lag 7680                     0.9782043                  0.060098335
+             b1cov.disruption:b2cov.productivity
+    Lag 0                              1.0000000
+    Lag 1536                           0.8946238
+    Lag 3072                           0.8212809
+    Lag 4608                           0.7527817
+    Lag 6144                           0.6978989
+    Lag 7680                           0.6378429
 
     Sample statistics burn-in diagnostic (Geweke):
     Chain 1 
@@ -850,56 +840,56 @@ mcmc.diagnostics(model_final)
     Fraction in 2nd window = 0.5 
 
                                   edges                  gwb1deg.fixed.0.25 
-                             -4.2378569                           1.4357892 
+                             -2.9691044                          -1.1935142 
                      gwb2deg.fixed.0.25                    b1cov.disruption 
-                             -9.2873389                           1.7761738 
+                             -0.6846123                          -2.0625291 
                      b2cov.productivity           b1factor.field_broad.STEM 
-                              5.4507710                           4.3952385 
+                             -3.5586681                          -1.9926417 
           b1nodematch.field_broad.SHAPE        b1nodematch.field_broad.STEM 
-                             -4.1034578                           1.4011382 
+                             -1.9233150                          -2.5082342 
     b1cov.disruption:b2cov.productivity 
-                             -0.6878173 
+                             -2.7842536 
 
     Individual P-values (lower = worse):
                                   edges                  gwb1deg.fixed.0.25 
-                           2.256635e-05                        1.510623e-01 
+                           0.0029866911                        0.2326680401 
                      gwb2deg.fixed.0.25                    b1cov.disruption 
-                           1.581938e-20                        7.570427e-02 
+                           0.4935885788                        0.0391573924 
                      b2cov.productivity           b1factor.field_broad.STEM 
-                           5.015192e-08                        1.106512e-05 
+                           0.0003727401                        0.0463006940 
           b1nodematch.field_broad.SHAPE        b1nodematch.field_broad.STEM 
-                           4.070208e-05                        1.611727e-01 
+                           0.0544404997                        0.0121336229 
     b1cov.disruption:b2cov.productivity 
-                           4.915678e-01 
-    Joint P-value (lower = worse):  2.846937e-11 
+                           0.0053651064 
+    Joint P-value (lower = worse):  0.002401693 
     Chain 2 
 
     Fraction in 1st window = 0.1
     Fraction in 2nd window = 0.5 
 
                                   edges                  gwb1deg.fixed.0.25 
-                             -5.8386048                           2.6920440 
+                            -10.0208858                           2.0875867 
                      gwb2deg.fixed.0.25                    b1cov.disruption 
-                            -11.5033035                           1.1738863 
+                             -2.6057918                          -1.9436623 
                      b2cov.productivity           b1factor.field_broad.STEM 
-                              2.4395382                           6.9588471 
+                              2.5729491                           0.4986098 
           b1nodematch.field_broad.SHAPE        b1nodematch.field_broad.STEM 
-                             -5.5295082                           1.5627177 
+                            -11.3653459                          -0.3194968 
     b1cov.disruption:b2cov.productivity 
-                             -0.1467698 
+                             -0.7644200 
 
     Individual P-values (lower = worse):
                                   edges                  gwb1deg.fixed.0.25 
-                           5.263978e-09                        7.101558e-03 
+                           1.233921e-23                        3.683513e-02 
                      gwb2deg.fixed.0.25                    b1cov.disruption 
-                           1.269612e-30                        2.404406e-01 
+                           9.166215e-03                        5.193618e-02 
                      b2cov.productivity           b1factor.field_broad.STEM 
-                           1.470605e-02                        3.430686e-12 
+                           1.008360e-02                        6.180543e-01 
           b1nodematch.field_broad.SHAPE        b1nodematch.field_broad.STEM 
-                           3.211298e-08                        1.181190e-01 
+                           6.221756e-30                        7.493498e-01 
     b1cov.disruption:b2cov.productivity 
-                           8.833137e-01 
-    Joint P-value (lower = worse):  3.435722e-67 
+                           4.446170e-01 
+    Joint P-value (lower = worse):  1.292772e-50 
 
     Note: MCMC diagnostics shown here are from the last round of
       simulation, prior to computation of final parameter estimates.

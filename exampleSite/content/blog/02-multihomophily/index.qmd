@@ -24,17 +24,18 @@ freeze: auto
 
 ## libraries
 ```{r, message=FALSE}
-library(ergm)
-library(ergm.ego)
-library(car)
-library(egor)
-library(tidyverse)
-library(tibble)
-library(texreg)
-library(purrr)
-library(tidyr)
-library(prioritizr)
-library(questionr)
+pacman::p_load(
+  ergm,
+  ergm.ego,
+  car,
+  egor,
+  tidyverse,
+  tibble,
+  texreg,
+  purrr,
+  tidyr,
+  prioritizr,
+  questionr)
 ```
 
 ## data

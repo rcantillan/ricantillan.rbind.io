@@ -18,22 +18,44 @@ format: hugo
 freeze: auto
 ---
 
+-   [libraries](#libraries)
+-   [data](#data)
+-   [ELSOC 2017](#elsoc-2017)
+    -   [Renombrar ID](#renombrar-id)
+    -   [Crear data frame alteris para 2017=a](#crear-data-frame-alteris-para-2017a)
+    -   [Crear vector alter id](#crear-vector-alter-id)
+    -   [Recod alteris](#recod-alteris)
+    -   [Borrar alteris con 5 parámetros con NA](#borrar-alteris-con-5-parámetros-con-na)
+    -   [Data Frame Ego's](#data-frame-egos)
+    -   [Recod data Ego's](#recod-data-egos)
+    -   [Crear objeto Egor (requerido para trabajar con función `ergm.ego`)](#crear-objeto-egor-requerido-para-trabajar-con-función-ergm.ego)
+    -   [Degree distribution](#degree-distribution)
+-   [Modelos](#modelos)
+    -   [Modelo 1](#modelo-1)
+        -   [Summary](#summary)
+        -   [Bondad de ajuste](#bondad-de-ajuste)
+        -   [MCMC](#mcmc)
+        -   [simulate](#simulate)
+        -   [Tidy](#tidy)
+        -   [Predict](#predict)
+
 {{< figure src="img/Fig14_A_600.gif" caption="Homophily" >}}
 
 ## libraries
 
 ``` r
-library(ergm)
-library(ergm.ego)
-library(car)
-library(egor)
-library(tidyverse)
-library(tibble)
-library(texreg)
-library(purrr)
-library(tidyr)
-library(prioritizr)
-library(questionr)
+pacman::p_load(
+  ergm,
+  ergm.ego,
+  car,
+  egor,
+  tidyverse,
+  tibble,
+  texreg,
+  purrr,
+  tidyr,
+  prioritizr,
+  questionr)
 ```
 
 ## data
@@ -254,13 +276,19 @@ table(egos$sexo)
 ``` r
 # Barrio
 egos$barrio <- matrix(rbinom(2473*5,1,0.6),2473,1) # Criterio minimalista
+```
+
+    Warning in matrix(rbinom(2473 * 5, 1, 0.6), 2473, 1): data length differs from
+    size of matrix: [12365 != 2473 x 1]
+
+``` r
 egos$barrio<-factor(Recode(egos$barrio,"1=1;0=2"))
 table(egos$barrio)
 ```
 
 
        1    2 
-    1506  967 
+    1505  968 
 
 ### Crear objeto Egor (requerido para trabajar con función `ergm.ego`)
 
@@ -371,6 +399,10 @@ modelo1<-ergm.ego(elsoc_ego~
                                       SAN.nsteps = 5e7))
 ```
 
+    Warning: 'glpk' selected as the solver, but package 'Rglpk' is not available;
+    falling back to 'lpSolveAPI'. This should be fine unless the sample size and/or
+    the number of parameters is very big.
+
     Warning: Argument(s) 'ergm' were not recognized or used. Did you mistype an
     argument name?
 
@@ -399,37 +431,37 @@ summary(modelo1)
 
     Monte Carlo Maximum Likelihood Results:
 
-                         Estimate Std. Error MCMC % z value Pr(>|z|)    
-    offset(netsize.adj) -8.499436   0.000000      0    -Inf  < 1e-04 ***
-    nodefactor.sexo.1    0.026094   0.374902      0   0.070 0.944511    
-    nodefactor.educ.2    0.510454   0.111578      0   4.575  < 1e-04 ***
-    nodefactor.educ.3    0.453725   0.152892      0   2.968 0.003001 ** 
-    nodefactor.educ.4    0.495349   0.184745      0   2.681 0.007335 ** 
-    nodefactor.ideol.2  -0.322233   0.208094      0  -1.548 0.121503    
-    nodefactor.ideol.3  -0.383891   0.188433      0  -2.037 0.041622 *  
-    nodefactor.ideol.4  -0.073608   0.224878      0  -0.327 0.743423    
-    nodefactor.ideol.5   0.000392   0.215906      0   0.002 0.998551    
-    nodefactor.ideol.6   0.429487   0.205463      0   2.090 0.036587 *  
-    nodefactor.relig.2  -0.662670   0.153775      0  -4.309  < 1e-04 ***
-    nodefactor.relig.3  -0.224157   0.177162      0  -1.265 0.205776    
-    nodefactor.relig.4   0.207720   0.158543      0   1.310 0.190133    
-    nodematch.sexo.1     0.265240   0.377637      0   0.702 0.482450    
-    nodematch.sexo.2     0.605081   0.386875      0   1.564 0.117812    
-    nodematch.educ.1     0.822089   0.135593      0   6.063  < 1e-04 ***
-    nodematch.educ.2     0.376890   0.112730      0   3.343 0.000828 ***
-    nodematch.educ.3     0.689269   0.142157      0   4.849  < 1e-04 ***
-    nodematch.educ.4     1.656137   0.139848      0  11.842  < 1e-04 ***
-    nodematch.ideol.1    1.708763   0.199848      0   8.550  < 1e-04 ***
-    nodematch.ideol.2    1.075087   0.323500      0   3.323 0.000890 ***
-    nodematch.ideol.3   -0.019859   0.238084      0  -0.083 0.933523    
-    nodematch.ideol.4    0.291631   0.256309      0   1.138 0.255199    
-    nodematch.ideol.5    1.565110   0.191898      0   8.156  < 1e-04 ***
-    nodematch.ideol.6    0.548568   0.134902      0   4.066  < 1e-04 ***
-    nodematch.relig.1    0.859990   0.130173      0   6.607  < 1e-04 ***
-    nodematch.relig.2    2.415272   0.171209      0  14.107  < 1e-04 ***
-    nodematch.relig.3    0.787513   0.262693      0   2.998 0.002719 ** 
-    nodematch.relig.4    0.740375   0.169100      0   4.378  < 1e-04 ***
-    absdiff.edad        -0.031325   0.002267      0 -13.817  < 1e-04 ***
+                          Estimate Std. Error MCMC % z value Pr(>|z|)    
+    offset(netsize.adj) -8.499e+00  0.000e+00      0    -Inf  < 1e-04 ***
+    nodefactor.sexo.1    2.632e-02  3.583e-01      0   0.073 0.941447    
+    nodefactor.educ.2    5.089e-01  1.096e-01      0   4.643  < 1e-04 ***
+    nodefactor.educ.3    4.535e-01  1.501e-01      0   3.021 0.002516 ** 
+    nodefactor.educ.4    4.953e-01  1.780e-01      0   2.783 0.005378 ** 
+    nodefactor.ideol.2  -3.233e-01  2.102e-01      0  -1.538 0.124051    
+    nodefactor.ideol.3  -3.846e-01  1.840e-01      0  -2.091 0.036539 *  
+    nodefactor.ideol.4  -7.388e-02  2.224e-01      0  -0.332 0.739708    
+    nodefactor.ideol.5   1.535e-05  2.097e-01      0   0.000 0.999942    
+    nodefactor.ideol.6   4.279e-01  1.903e-01      0   2.249 0.024533 *  
+    nodefactor.relig.2  -6.594e-01  1.505e-01      0  -4.380  < 1e-04 ***
+    nodefactor.relig.3  -2.219e-01  1.673e-01      0  -1.326 0.184746    
+    nodefactor.relig.4   2.086e-01  1.581e-01      0   1.320 0.186938    
+    nodematch.sexo.1     2.650e-01  3.605e-01      0   0.735 0.462222    
+    nodematch.sexo.2     6.053e-01  3.648e-01      0   1.659 0.097033 .  
+    nodematch.educ.1     8.236e-01  1.305e-01      0   6.312  < 1e-04 ***
+    nodematch.educ.2     3.791e-01  1.118e-01      0   3.392 0.000695 ***
+    nodematch.educ.3     6.918e-01  1.362e-01      0   5.078  < 1e-04 ***
+    nodematch.educ.4     1.655e+00  1.382e-01      0  11.979  < 1e-04 ***
+    nodematch.ideol.1    1.712e+00  2.002e-01      0   8.548  < 1e-04 ***
+    nodematch.ideol.2    1.077e+00  3.358e-01      0   3.206 0.001345 ** 
+    nodematch.ideol.3   -1.906e-02  2.347e-01      0  -0.081 0.935290    
+    nodematch.ideol.4    2.891e-01  2.486e-01      0   1.163 0.244909    
+    nodematch.ideol.5    1.554e+00  2.147e-01      0   7.238  < 1e-04 ***
+    nodematch.ideol.6    5.515e-01  1.274e-01      0   4.328  < 1e-04 ***
+    nodematch.relig.1    8.635e-01  1.365e-01      0   6.324  < 1e-04 ***
+    nodematch.relig.2    2.410e+00  1.622e-01      0  14.861  < 1e-04 ***
+    nodematch.relig.3    7.853e-01  2.587e-01      0   3.036 0.002399 ** 
+    nodematch.relig.4    7.407e-01  1.722e-01      0   4.302  < 1e-04 ***
+    absdiff.edad        -3.134e-02  2.153e-03      0 -14.556  < 1e-04 ***
     ---
     Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -490,7 +522,7 @@ mcmc.diagnostics(modelo1, which = "plots")
 
     Note: To save space, only one in every 2 iterations of the MCMC sample
       used for estimation was stored for diagnostics. Sample size per chain
-      was originally around 4418 with thinning interval 16384.
+      was originally around 6634 with thinning interval 16384.
 
     Note: MCMC diagnostics shown here are from the last round of
       simulation, prior to computation of final parameter estimates.
@@ -530,15 +562,15 @@ broom::tidy(modelo1, exponentiate = TRUE, conf.int = TRUE, conf.level = 0.99)
        term      estimate std.error mcmc.error  statistic p.value conf.low conf.high
        <chr>        <dbl>     <dbl>      <dbl>      <dbl>   <dbl>    <dbl>     <dbl>
      1 offset(n… 0.000204     0              0 -Inf       0       0.000204  0.000204
-     2 nodefact… 1.03         0.375          0    0.0696  9.45e-1 0.391     2.70    
-     3 nodefact… 1.67         0.112          0    4.57    4.77e-6 1.25      2.22    
-     4 nodefact… 1.57         0.153          0    2.97    3.00e-3 1.06      2.33    
-     5 nodefact… 1.64         0.185          0    2.68    7.33e-3 1.02      2.64    
-     6 nodefact… 0.725        0.208          0   -1.55    1.22e-1 0.424     1.24    
-     7 nodefact… 0.681        0.188          0   -2.04    4.16e-2 0.419     1.11    
-     8 nodefact… 0.929        0.225          0   -0.327   7.43e-1 0.521     1.66    
-     9 nodefact… 1.00         0.216          0    0.00182 9.99e-1 0.574     1.74    
-    10 nodefact… 1.54         0.205          0    2.09    3.66e-2 0.905     2.61    
+     2 nodefact… 1.03         0.358          0    7.35e-2 9.41e-1 0.408     2.58    
+     3 nodefact… 1.66         0.110          0    4.64e+0 3.43e-6 1.25      2.21    
+     4 nodefact… 1.57         0.150          0    3.02e+0 2.52e-3 1.07      2.32    
+     5 nodefact… 1.64         0.178          0    2.78e+0 5.38e-3 1.04      2.60    
+     6 nodefact… 0.724        0.210          0   -1.54e+0 1.24e-1 0.421     1.24    
+     7 nodefact… 0.681        0.184          0   -2.09e+0 3.65e-2 0.424     1.09    
+     8 nodefact… 0.929        0.222          0   -3.32e-1 7.40e-1 0.524     1.65    
+     9 nodefact… 1.00         0.210          0    7.32e-5 1.00e+0 0.583     1.72    
+    10 nodefact… 1.53         0.190          0    2.25e+0 2.45e-2 0.940     2.50    
     # ℹ 20 more rows
 
 ### Predict

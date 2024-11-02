@@ -1,6 +1,6 @@
 ---
 date: 2024-11-01
-title: Disrupción y Estructura en redes de producción cietífica 
+title: Disrupción y Estructura en redes de producción científica 
 subtitle:  Un Análisis ERGM Modo-2 al campo de la Ciencia de la Sustentabilidad
 author: Roberto Cantillan
 show_post_date: true
