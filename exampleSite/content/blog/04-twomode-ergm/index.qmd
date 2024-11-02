@@ -1,0 +1,373 @@
+---
+date: 2023-08-09
+
+title: Disrupción y Estructura en Redes de Co-autoría Científica
+subtitle:  Un Análisis ERGM Modo-2
+author: Roberto Cantillan
+
+show_post_date: true
+show_author_byline: true
+
+draft: false
+
+summary: |
+    En este análisis examinamos la estructura de colaboración científica en Latinoamérica mediante un ERGM bipartito sobre una red de 45,724 conexiones autor-artículo. Los resultados revelan una baja densidad base (edges=-8.69***) compensada por una fuerte tendencia a formar equipos de tamaño medio (gwb1deg=1.55***, gwb2deg=7.58***). Destaca especialmente cómo la disrupción científica se asocia positivamente con la formación de vínculos (0.43***), Los resultados sugieren que mientras las ciencias sociales y humanidades (SHAPE) tienden a colaborar dentro de su campo, las ciencias STEM muestran patrones más abiertos de colaboración interdisciplinaria. Esto podría reflejar diferencias en las prácticas de investigación: SHAPE con tradiciones más especializadas vs. STEM con mayor apertura a cruces disciplinares.
+
+
+format: hugo
+freeze: auto
+---
+
+
+
+## Introducción
+
+La ciencia de la sustentabilidad requiere urgentemente de innovación transformadora para abordar desafíos socio-ambientales complejos. Comprender cómo emerge la investigación disruptiva en las redes científicas es, por tanto, crucial. Li et al. (2024) han demostrado una relación inversa entre productividad y disrupción científica, pero los mecanismos estructurales subyacentes a este fenómeno permanecen poco claros, particularmente en el contexto de redes modo-2 que vinculan autores y publicaciones.
+
+Los modelos ERGM proporcionan un marco metodológico robusto para examinar cómo las características de autores y papers, junto con sus patrones de vinculación, influyen en la estructura general de la red científica. Utilizando el dataset SciSciNet, este trabajo analiza las estructuras emergentes en una red bipartita de co-autoría científica latinoamericana entre 1990-2000.
+
+## Configuración Inicial y Carga de Datos
+
+```{r setup}
+#| warning: false
+#| message: false
+
+# 1. Cargar paquetes necesarios
+library(osfr)
+library(tidyverse)
+library(ergm)
+library(Matrix)
+library(network)
+library(ggraph)
+library(tidygraph)
+library(kableExtra)
+
+# Configurar tema para visualizaciones
+theme_set(theme_minimal())
+```
+
+```{r load-data}
+#| warning: false
+#| message: false
+
+# 2. datos 
+load("/home/rober/Documents/ricantillan.rbind.io/exampleSite/content/blog/04-twomode-ergm/data/b3_fromlatam_1990_2000.RData")
+
+# 3. Filtrar datos de Latam
+#b3_fromlatam <- b3_joined %>%
+#  filter(DocType == "Journal") %>%
+#  group_by(PaperID) %>%
+#  filter(latam_prop >= 0.5 |
+#           any(AuthorSequenceNumber == 1 & is_latam == 1)) %>%
+#  ungroup()
+#
+## 4. Filtrar por tiempo
+#rm(b3_joined)
+#gc()
+#b3_fromlatam_1990_2000 <- b3_fromlatam %>% filter(Year < 2000)
+```
+
+## Preparación de Datos
+
+```{r data-prep}
+#| code-fold: show
+
+# 5. Preparación y limpieza
+clean_data <- b3_fromlatam_1990_2000 %>%
+  filter(!is.na(Disruption),
+         !is.na(CitationCount), 
+         !is.na(H.index_auth),
+         !is.na(Average_C10_auth),
+         !is.na(Productivity_auth),
+         !is.na(Affiliation_Name),
+         !is.na(is_latam),
+         !is.na(Institution_Count),
+         !is.na(Field_Name),
+         !is.na(Field_Type)) %>%
+  filter(Field_Type == "Top")
+
+# 6. Estandarización de variables
+clean_data <- clean_data %>%
+  mutate(
+    disruption_std = as.vector(scale(Disruption)),
+    citations_std = as.vector(scale(log1p(CitationCount))),
+    h_index_std = as.vector(scale(log1p(H.index_auth))),
+    avg_c10_std = as.vector(scale(log1p(Average_C10_auth))),
+    productivity_std = as.vector(scale(log1p(Productivity_auth))),
+    field_broad = case_when(
+      Field_Name %in% c(
+        "Biology", "Chemistry", "Computer science",
+        "Engineering", "Environmental science", "Geography",
+        "Materials science", "Mathematics", "Medicine"
+      ) ~ "STEM",
+      Field_Name %in% c(
+        "Business", "Economics", "Political science", "Sociology"
+      ) ~ "SHAPE",
+      TRUE ~ NA_character_
+    )
+  )
+```
+
+## Construcción de la Red Bipartita
+
+```{r network-construction}
+#| code-fold: show
+
+# 7. Atributos por modo
+paper_attributes <- clean_data %>%
+  group_by(PaperID) %>%
+  slice(1) %>%
+  ungroup() %>%
+  select(PaperID, disruption_std, citations_std, 
+         Institution_Count, Field_Name, field_broad)
+
+author_attributes <- clean_data %>%
+  group_by(AuthorID) %>%
+  slice(1) %>%
+  ungroup()
+
+# 8. Crear matriz de incidencia y red bipartita
+papers <- unique(paper_attributes$PaperID)
+authors <- unique(author_attributes$AuthorID)
+
+paper_author_matrix <- sparseMatrix(
+  i = match(clean_data$PaperID, papers),
+  j = match(clean_data$AuthorID, authors),
+  x = 1,
+  dims = c(length(papers), length(authors))
+)
+
+net_bipartite <- network(
+  paper_author_matrix,
+  matrix.type = "bipartite",
+  directed = FALSE
+)
+
+# 9. Asignación de atributos
+# Modo 1 (Papers)
+net_bipartite %v% "disruption" <- paper_attributes$disruption_std
+net_bipartite %v% "citations" <- paper_attributes$citations_std
+net_bipartite %v% "inst_count" <- paper_attributes$Institution_Count
+net_bipartite %v% "field" <- paper_attributes$Field_Name
+net_bipartite %v% "field_broad" <- paper_attributes$field_broad
+
+# Modo 2 (Autores)
+net_bipartite %v% "h_index" <- author_attributes$h_index_std
+net_bipartite %v% "avg_c10" <- author_attributes$avg_c10_std
+net_bipartite %v% "affiliation" <- author_attributes$Affiliation_Name
+net_bipartite %v% "is_latam" <- author_attributes$is_latam
+net_bipartite %v% "productivity" <- author_attributes$productivity_std
+```
+
+### Visualización de la Red
+```{r}
+# Obtener el número de vértices
+n_vertices <- network.size(net_bipartite)
+
+# Obtener el valor de bipartite (que es 161 según los atributos que mostraste)
+bipartite_value <- 161
+
+# Crear el vector is_actor
+is_actor <- rep(FALSE, n_vertices)
+is_actor[(bipartite_value + 1):n_vertices] <- TRUE
+
+# Agregar el atributo a la red
+net_bipartite %v% "is_actor" <- is_actor
+
+# Verificar que se agregó correctamente
+table(net_bipartite %v% "is_actor")
+
+
+# Crear el vector de etiquetas
+n_vertices <- network.size(net_bipartite)
+bipartite_value <- 161
+
+node_labels <- rep("Autor", n_vertices)
+node_labels[1:bipartite_value] <- "Paper"
+
+# Agregar el atributo a la red
+net_bipartite %v% "tipo" <- node_labels
+
+# Verificar que se agregó correctamente
+table(net_bipartite %v% "tipo")
+```
+
+
+```{r}
+ggraph(net_bipartite, layout = "graphopt") + 
+     geom_edge_link0(edge_colour = "black", edge_width = 0.2, edge_alpha = 1) + 
+   geom_node_point(aes(fill = tipo, shape = tipo), size = 2.25, colour = "#FFFFFF", shape = 21, stroke = 0.3) +
+   scale_fill_manual(values = c("#003f5c","#ffa600")) +
+     theme_graph() + 
+     theme(legend.position = "left") +
+  theme(legend.justification=c(0,.90), 
+        legend.position=c(0,1),
+        legend.box.just = "bottom",
+        legend.box.background = element_rect(color="black", size=.5),
+        legend.margin = margin(4, 4, 4, 4),
+                legend.text = element_text(size=11)) +
+          guides(size=F, edge_width=F,
+                 fill = guide_legend(override.aes = list(size = 6))) +
+          labs(fill = "Entidad")
+```
+
+```{r}
+degreedist(net_bipartite)
+```
+
+
+
+```{r}
+# Crear dataframes para cada modo
+mode1_data <- data.frame(
+  grado = c(0, 1, 2, 3, 4, 5, 6, 8),
+  frecuencia = c(284, 80, 45, 20, 8, 4, 1, 3),
+  modo = "Modo 1 (Papers)"
+)
+
+mode2_data <- data.frame(
+  grado = c(0, 1, 2, 3, 4, 5),
+  frecuencia = c(161, 264, 15, 3, 1, 1),
+  modo = "Modo 2 (Autores)"
+)
+
+# Combinar los datos
+degree_data <- rbind(mode1_data, mode2_data)
+
+# Crear el gráfico
+ggplot(degree_data, aes(x = grado, y = frecuencia, fill = modo)) +
+  geom_bar(stat = "identity", position = "dodge", alpha = 0.8) +
+  scale_fill_manual(values = c( "#ffa600", "#003f5c")) +
+  labs(title = "Distribución de Grados",
+       subtitle = "",
+       x = "Grado",
+       y = "",
+       fill = "Entidad") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold"),
+    legend.position = "bottom"
+  ) +
+  scale_x_continuous(breaks = 0:8) +
+  scale_y_continuous(expand = c(0, 30)) +
+  geom_text(aes(label = frecuencia), 
+            position = position_dodge(width = 0.9),
+            vjust = -0.5,
+            size = 3)
+```
+
+
+## Análisis ERGM
+
+```{r ergm-models}
+#| code-fold: show
+
+# 10. Modelos ERGM
+## 1. Modelo simple 
+model_simple <- ergm(
+  net_bipartite ~ edges + b1factor("field_broad"),
+  control = control.ergm(
+    MCMLE.maxit = 5,
+    MCMC.samplesize = 1000,
+    MCMLE.termination = "Hummel"
+  )
+)
+
+## 2. Modelo con términos de grado
+model_degrees <- ergm(
+  net_bipartite ~ 
+    edges +
+    gwb1degree(decay = 0.25, fixed = T) +
+    gwb2degree(decay = 0.25, fixed = T) +
+    b1factor("field_broad"),
+  control = control.ergm(
+    init = c(coef(model_simple), rep(0, 2)),
+    MCMLE.maxit = 10,
+    MCMC.samplesize = 2000,
+    MCMLE.termination = "Hummel"
+  )
+)
+
+## 3. Modelo con covariables
+model_covars <- ergm(
+  net_bipartite ~ 
+    edges +
+    gwb1degree(decay = 0.25, fixed = T) +
+    gwb2degree(decay = 0.25, fixed = T) +
+    b1factor("field_broad") +
+    b1cov("disruption") +
+    b2cov("productivity"),
+  control = control.ergm(
+    init = c(coef(model_degrees), rep(0, 2)),
+    MCMLE.maxit = 15,
+    MCMC.samplesize = 3000,
+    MCMLE.termination = "Hummel"
+  )
+)
+
+## 4. Modelo final optimizado
+model_final <- ergm(
+  net_bipartite ~ 
+    edges +
+    gwb1degree(decay = 0.25, fixed = T) +
+    gwb2degree(decay = 0.25, fixed = T) +
+    b1cov("disruption") +
+    b2cov("productivity") +
+    b1factor("field_broad") +
+    b1nodematch("field_broad", diff=T) +
+    b1cov("disruption"):b2cov("productivity"),
+  control = control.ergm(
+    init = c(coef(model_covars), rep(0, 3)),
+    seed = 123,
+    MCMLE.maxit = 14,
+    MCMC.burnin = 1000,      
+    MCMC.interval = 50,      
+    MCMC.samplesize = 2000,  
+    parallel = 2,
+    parallel.type = "PSOCK",
+    MCMLE.termination = "Hummel"
+  )
+)
+```
+
+```{r}
+summary(model_final)
+```
+
+
+### Diagnósticos del Modelo
+
+```{r model-diagnostics}
+#| fig-width: 10
+#| fig-height: 8
+
+# Bondad de ajuste
+gof_model <- gof(model_final)
+plot(gof_model)
+```
+
+
+```{r}
+# MCMC diagnósticos
+mcmc.diagnostics(model_final)
+```
+
+
+## Discusión y Conclusiones
+
+El análisis siguiente se realiza a modo de ejemplo y con coeficientes imprecisos puesto que La estimación de MCMLE necesita más de 14 iteraciones (número usado en el último modelo).
+
+Los resultados revelan varios patrones significativos en la estructura de colaboración científica:
+
+1. **Efectos de Grado**: La significativa geometría ponderada de grados sugiere una tendencia hacia la formación de equipos de tamaño moderado.
+
+2. **Disrupción y Productividad**: La interacción positiva entre disrupción y productividad indica que los autores más productivos tienden a vincularse con papers más disruptivos.
+
+3. **Homofilia por Campo**: La fuerte homofilia en campos STEM sugiere la persistencia de silos disciplinarios.
+
+### Limitaciones y Trabajo Futuro
+
+- Extensión temporal del análisis
+- Incorporación de medidas alternativas de disrupción
+- Análisis de sensibilidad con diferentes especificaciones de modelo
+
