@@ -1,20 +1,18 @@
 ---
 date: 2024-11-01
-
 title: Disrupción y Estructura en redes de producción cietífica 
 subtitle:  Un Análisis ERGM Modo-2 al campo de la Ciencia de la Sustentabilidad
 author: Roberto Cantillan
-
 show_post_date: true
 show_author_byline: true
-
 draft: false
-
 summary: |
     En este análisis examinamos la estructura de colaboración científica en Latinoamérica mediante un ERGM bipartito sobre una red de 45,724 conexiones autor-artículo. Los resultados revelan una baja densidad base compensada por una fuerte tendencia a formar equipos de tamaño medio. Destaca especialmente cómo la disrupción científica se asocia positivamente con la formación de vínculos, Los resultados sugieren que mientras las ciencias sociales y humanidades (SHAPE) tienden a colaborar dentro de su campo, las ciencias STEM muestran patrones más abiertos de colaboración interdisciplinaria. Esto podría reflejar diferencias en las prácticas de investigación: SHAPE con tradiciones más especializadas vs. STEM con mayor apertura a cruces disciplinares.
 
-
 format: hugo
+toc: true
+toc-title: "Contenido"
+toc-location: right
 freeze: auto
 ---
 
@@ -272,6 +270,8 @@ Siguiendo a Gondal (2011), analizamos tres propiedades estructurales fundamental
 ### Estadísticas Descriptivas Básicas
 
 ```{r network-stats}
+#| output: false
+
 # Estadísticas básicas de la red
 summary(net_bipartite, print.adj = FALSE)
 
@@ -353,7 +353,8 @@ network_summary <- data.frame(
 network_summary %>%
   kable(col.names = c("Métrica", "Valor", "Descripción"),
         caption = "Estadísticas Descriptivas de la Red") %>%
-  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  kable_classic_2(full_width = F) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
   pack_rows("Características Básicas", 1, 4) %>%
   pack_rows("Medidas de Cohesión", 5, 7) %>%
   pack_rows("Estructura Núcleo-Periferia", 8, 10) %>%
@@ -436,7 +437,8 @@ bipartite_metrics <- data.frame(
   )
 
 kable(as_tibble(bipartite_metrics), caption = "Resumen centralidad por entidad") %>% 
-    kable_styling(bootstrap_options = c("striped", "hover"))
+  kable_classic_2(full_width = F) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
 
@@ -571,29 +573,29 @@ Esto sugiere que mientras las ciencias sociales y humanidades (SHAPE) tienden a 
 - La productividad muestra un efecto negativo (β = -0.12, p < 0.001)
 - Sorprendentemente, la interacción entre disrupción y productividad no es significativa (β = 0.002, p = 0.971)
 
-### Implicaciones Teóricas
+## Implicaciones Teóricas
 
 Los resultados refinan tanto la teoría de Gondal (2011) sobre campos emergentes como los hallazgos de Li et al. (2024) sobre la relación entre productividad y disrupción:
 
-1. **Centralización Asimétrica**: 
+### Centralización Asimétrica 
 
 El coeficiente significativo de gwb2degree (β = 9.02) junto con el gwb1degree no significativo indica que la centralización opera de manera asimétrica. La tendencia a la centralización que Gondal predice para campos emergentes se manifiesta principalmente en los patrones de colaboración de los autores, más que en la concentración de citaciones en papers específicos. Esto sugiere que en etapas tempranas, la estructura del campo está más determinada por redes de colaboración que por papers seminales.
 
-2. **Diferenciación Disciplinar Heterogénea**:
+### Diferenciación Disciplinar Heterogénea
 
 La fuerte homofilia en SHAPE (β = 1.49) contrastada con la ausencia de homofilia significativa en STEM refina la tesis de Gondal sobre diferenciación disciplinar. En lugar de un proceso uniforme de diferenciación, observamos que:
   - Los campos SHAPE muestran límites más rígidos, con mayor tendencia a colaboraciones intradisciplinares
   - Los campos STEM exhiben fronteras más permeables, facilitando colaboraciones interdisciplinares
 Esta heterogeneidad en patrones de diferenciación no está contemplada en el marco original de Gondal.
 
-3. **Complejidad de la Innovación y Productividad**:
+### Complejidad de la Innovación y Productividad
 
 Nuestros resultados extienden los hallazgos de Li et al. (2024) al contexto de redes de colaboración:
   - El efecto negativo de la productividad en la formación de vínculos (β = -0.12) es consistente con la tesis de Li et al. sobre que los científicos más productivos tienden a producir menos investigación disruptiva
   - Sin embargo, el efecto positivo de la disrupción en la formación de vínculos (β = 0.23) sugiere que las ideas disruptivas, aunque menos frecuentes en autores productivos, son atractivas para la colaboración
   - La ausencia de una interacción significativa entre disrupción y productividad (β = 0.002, p = 0.971) sugiere que estos procesos operan de manera independiente, refinando nuestra comprensión del trade-off identificado por Li et al.
 
-4. **Estructuras Híbridas y Tensiones Productivas**:
+### Estructuras Híbridas y Tensiones Productivas
 
 La integración de nuestros hallazgos con Li et al. (2024) y Gondal (2011) sugiere que los campos emergentes se caracterizan por tensiones productivas entre:
   - Centralización colaborativa (evidenciada por gwb2degree positivo)
@@ -601,7 +603,7 @@ La integración de nuestros hallazgos con Li et al. (2024) y Gondal (2011) sugie
   - Productividad establecida (efecto negativo de productividad)
 Estas tensiones podrían ser funcionales para el desarrollo del campo, permitiendo simultáneamente la acumulación de conocimiento (vía autores productivos centrales) y la innovación disruptiva (vía colaboraciones con autores menos establecidos).
 
-### Limitaciones y Trabajo Futuro
+## Limitaciones y Trabajo Futuro
 
   - Extensión temporal del análisis
   - Incorporación de medidas alternativas de disrupción
